@@ -1,0 +1,32 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.fancy-button {
+    width: 25%;
+    background: rgb(198, 198, 198);
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.fancy-button::before {
+    content: "Botão: ";
+}
+
+.fancy-button::after {
+    content: " \1F60D";
+}
+
+.fancy-button:active {
+    border-color: blue;
+}
+
+.fancy-button:hover {
+    background: black;
+    color: white;
+    border: 3px solid rgb(151, 151, 151);
+}

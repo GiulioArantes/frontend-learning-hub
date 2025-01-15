@@ -1,0 +1,125 @@
+/* Reset básico 
+    Design responsivo
+    Flexbox e Grid para organização dos elementos
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    font-size: 18px;
+}
+
+header {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.profile-details {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 0.5rem;
+    align-items: center;
+    height: 100vh;
+    width: 95%;
+    background-color: white;
+    border-radius: 8px;
+
+}
+
+.profile-details h2 {
+    font-size: 24px;
+}
+
+footer {
+    padding: 10px;
+    width: 100%;
+    background-color: #333;
+    color: white;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    justify-items: center;
+}
+
+ul,
+a {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    .profile-info {
+        flex-direction: column;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-details {
+        padding: 15px;
+    }
+
+    .profile-details h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-info h1 {
+        font-size: 1.5rem;
+    }
+
+    .profile-details h2 {
+        font-size: 20px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}

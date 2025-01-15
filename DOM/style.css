@@ -1,0 +1,58 @@
+:root {
+    /* Cores*/
+    --color-white: #fafafa;
+    --color-blacky: black;
+    --color-success: #28a745;
+    /* Fontes */
+    --font-cursive: 'Apple Chancery, cursive';
+    /* Espaçamento */
+    --spacing-xs: 8px;
+    --spacing-md: 16px;
+    /* Borda */
+    --main-border: 2px solid blue;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Inclui bordas e padding no tamanho total do elemento */
+}
+
+body {
+    background-color: whitesmoke;
+    width: 100vw;
+    height: 100vh;
+}
+
+.header {
+    margin-bottom: 1rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.sections {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+#realtime-text {
+    margin-top: 1rem;
+    padding: 0 1rem 1rem 0;
+}
+
+#keydown-test {
+    padding: 0 1rem 1rem 0;
+}
+
+.list {
+    border: var(--main-border);
+    height: 60vh;
+    margin-top: 1rem;
+}

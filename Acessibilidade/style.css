@@ -1,0 +1,13 @@
+body {
+    background-color: white;
+}
+
+input {
+    margin: 0.3em;
+    padding-right: 1em;
+}
+
+img {
+    width: 10%;
+    height: 10%;
+}

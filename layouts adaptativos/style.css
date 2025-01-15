@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Inclui bordas e padding no tamanho total do elemento */
+}
+
+:root {
+    /* Cores */
+    --color-primary: #007bff;
+    --color-secundary: #6c757d;
+    --color-success: #28a745;
+    /* Fontes */
+    --font-size-base: 14px;
+    --font-cursive: 'Apple Chancery, cursive';
+
+    /* Espaçamento */
+    --spacing-xs: 8px;
+    --spacing-md: 16px;
+
+    /* Borda */
+    --border-simple: 2px solid black;
+}
+
+body {
+    display: flex;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+    font-size: var(--font-size-base);
+    font-family: var(--font-cursive);
+}
+
+.header {
+    width: 100%;
+    background-color: var(--color-primary);
+    padding: 1rem;
+}
+
+.main {
+    display: grid;
+    grid-template-rows: 5vh 30vh 30vh;
+    background-color: aliceblue;
+    gap: 1rem;
+}
+
+.sidebar {
+    background-color: white;
+}
+
+.sidebar,
+.article,
+.section {
+    padding: var(--spacing-xs);
+}
+
+footer {
+    width: 100%;
+    background-color: var(--color-secundary);
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .main {
+        display: grid;
+        grid-template-columns: 8% 1fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 1rem;
+        grid-template-areas: "sidebar article"
+            "sidebar section";
+        background-color: aliceblue;
+        gap: 1rem;
+    }
+
+    .sidebar {
+        grid-area: sidebar;
+    }
+
+    .article {
+        grid-area: article;
+    }
+
+    .section {
+        grid-area: section;
+        margin-bottom: 2rem;
+        border-top: 2px solid var(--color-primary);
+    }
+}
+
+@media (min-width: 1024px) {
+    .main {
+        display: grid;
+        grid-template-columns: 8% 1fr 1fr;
+        grid-template-areas: "sidebar article section"
+            "sidebar article section";
+        height: 100%;
+    }
+
+    .section {
+        border-top: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .header {
+        width: 99%;
+        align-self: center;
+    }
+}

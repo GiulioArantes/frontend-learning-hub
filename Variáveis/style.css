@@ -1,0 +1,29 @@
+:root {
+    --cor-primaria: #93c1e0;
+    --cor-secundaria: #7b7b7b;
+    --cor-terceira: #107fc9;
+    --fonte-padrao: 'Arial, sans-serif';
+    --espacamento: 1.5rem;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    font-family: var(--fonte-padrao);
+    background-color: var(--cor-primaria);
+    padding: var(--espacamento);
+}
+
+.button {
+    padding: 0.5rem 0.5rem;
+    background-color: var(--cor-secundaria);
+}
+
+input[type="checkbox"]:checked+.card {
+    background-color: var(--cor-terceira);
+}

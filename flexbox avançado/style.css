@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: stretch;
+    gap: 1rem;
+    width: 80%;
+    height: 40%;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 1rem;
+}
+
+.item {
+    flex: 0 1 10%;
+    /* flex-grow, flex-shrink, flex-basis */
+    text-align: center;
+    padding: 1rem;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 5px;
+}
