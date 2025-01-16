@@ -1,21 +1,24 @@
 # Meu Projeto Didático
 
-Este repositório contém projetos de estudo e aprendizado sobre desenvolvimento, explorando conceitos básicos e avançados de HTML, CSS e JavaScript.
+Este projeto é um site simples criado como parte do meu aprendizado em front-end. Ele inclui uma estrutura básica de HTML, estilos personalizados com CSS e funcionalidades planejadas com JavaScript.
 
 ## Funcionalidades
 
-- Criação de listas dinâmicas utilizando DOM
-- Alteração de elementos em tempo real
-- Manipulação de eventos do teclado e mouse
-- Formulários interativos com validação básica
-- Estilização avançada com CSS
+- [x] Estrutura básica com HTML
+- [x] Estilos personalizados com CSS
+- [ ] Integração de JavaScript (planejado)
 
 ## Tecnologias Usadas
 
-- HTML
-- CSS
-- JavaScript
+- HTML5
+- CSS3
 
 ## Como Visualizar
 
-[Clique aqui para ver o projeto online](https://GiulioArantes.github.io/meu-projeto-didatico/)
+Acesse o projeto online em: [GitHub Pages](https://giulioarantes.github.io/meu-projeto-didatico/).
+
+## Contato
+
+Caso queira entrar em contato comigo:
+- **Email**: giulio.arantes@icloud.com
+- **LinkedIn**: [Giulio Arantes](https://linkedin.com/in/giulio-arantes)
