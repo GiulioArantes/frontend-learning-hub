@@ -12,6 +12,26 @@
 <body>
     <div class="container">
         <h1>Adicione itens a lista</h1>
+        <form>
+
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" required />
+
+            <label for="idade">Idade:</label>
+            <input type="number" name="idade" id="idade" min="1" max="120" />
+
+            <button id="table-btn">Adicionar a tabela</button>
+
+            <table class="dinamic-table">
+                <thead>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </form>
         <button id="list-btn">adicionar item</button>
         <div class="list">
             <ul id="ul">

@@ -10,6 +10,9 @@
     --spacing-md: 16px;
     /* Borda */
     --main-border: 2px solid blue;
+    --discreet-border: 1px solid #ddd;
+    /* Fundo */
+    --discreet-background: #f9f9f9;
 }
 
 
@@ -17,6 +20,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: 1.6;
     /* Inclui bordas e padding no tamanho total do elemento */
 }
 
@@ -31,9 +35,13 @@ body {
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: var(--discreet-border);
+    border-radius: 8px;
+    background-color: var(--discreet-background);
 }
 
 .sections {
@@ -53,6 +61,60 @@ body {
 
 .list {
     border: var(--main-border);
-    height: 60vh;
-    margin-top: 1rem;
+    margin-top: 20px;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+}
+
+#ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 8px;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+    border-radius: 4px;
+}
+
+form input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Tabela */
+.dinamic-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
 }

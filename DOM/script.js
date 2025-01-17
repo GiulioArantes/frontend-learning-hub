@@ -97,3 +97,31 @@ const addItem = () => {
 if (listBtn) {
     listBtn.addEventListener("click", addItem);
 }
+
+//Tabela Dinâmica:
+//Crie um formulário com dois campos: "Nome" e "Idade".
+//Adicione um botão "Adicionar à Tabela".
+//Sempre que o botão for clicado, insira uma nova linha
+// na tabela com os valores dos campos.
+
+const inputName = document.getElementById("nome");
+const inputAge = document.getElementById("idade");
+const tBody = document.querySelector("tbody");
+const tableBtn = document.getElementById("table-btn");
+
+const addPeople = (event) => {
+    event.preventDefault();
+
+    const tr = document.createElement("tr");
+    const tdName = document.createElement("td");
+    const tdAge = document.createElement("td");
+
+    tdName.textContent = inputName.value;
+    tdAge.textContent = inputAge.value;
+
+    tr.appendChild(tdName);
+    tr.appendChild(tdAge);
+    tBody.appendChild(tr);
+}
+
+tableBtn.addEventListener("click", addPeople);
