@@ -86,43 +86,88 @@ const listBtn = document.getElementById("list-btn");
 const listContainer = document.querySelector(".list");
 const ulList = document.getElementById("ul");
 const style = document.createElement("style");
+const inputItem = document.getElementById("unit-item");
 
 const addItem = () => {
-    const itemList = document.createElement("li");
-    const liText = document.createTextNode("Item ");
-    const removeBtnList = document.createElement("button");
-    const removeBtnListText = document.createTextNode(" Remover");
-    removeBtnList.style.marginLeft = "15px";
-    removeBtnList.appendChild(removeBtnListText);
-    itemList.appendChild(liText);
-    ulList.appendChild(itemList);
-    ulList.appendChild(removeBtnList);
+    if (inputItem.value.trim() === "") {
+        alert(`Digite o item que deseja adicionar`);
+    } else {
+        alertMessage = inputItem.value;
+        const itemList = document.createElement("li");
+        itemList.textContent = inputItem.value;
+        const removeBtnList = document.createElement("button");
+        const removeBtnListText = document.createTextNode(" Remover");
+        removeBtnList.style.marginLeft = "15px";
+        removeBtnList.appendChild(removeBtnListText);
+        ulList.appendChild(itemList);
+        itemList.appendChild(removeBtnList);
+    }
 };
+
 
 //Delegação de eventos ul, li. 
 //Marcar o item como concluído.
+let timer = null;
+let editInput = null;
 
 ulList.addEventListener("click", (event) => {
-    const clickedItem = event.target;
-    if (clickedItem.classList.contains("completed")) {
-        clickedItem.classList.remove("completed");
-        alert(`Você desmarcou o item: ${clickedItem.textContent}`);
-    } else if (clickedItem.classList.length === 0) {
-        clickedItem.classList.add("completed");
-        style.textContent = `
-        .completed::after {
-        content: '\\2713';
-        color: green;
-        margin-left: 3px;
-        }`;
-        document.head.appendChild(style);
-        alert(`Você clicou no item: ${clickedItem.textContent}`);
-    }
+    clearTimeout(timer);
+
+    timer = setTimeout(() => {
+        if (event.detail === 1) {
+            const clickedItem = event.target;
+            if (clickedItem.classList.contains("completed") && clickedItem.tagName === 'LI') {
+                clickedItem.classList.remove("completed");
+                alert(`Você desmarcou o item: ${clickedItem.firstChild.textContent}`);
+            } else if (clickedItem.classList.length === 0 && clickedItem.tagName === 'LI') {
+                clickedItem.classList.add("completed");
+                style.textContent = `
+                .completed::before {
+                content: '\\2713';
+                color: green;
+                margin-right: 3px;
+                }`;
+                document.head.appendChild(style);
+                alert(`Você clicou no item: ${clickedItem.firstChild.textContent}`);
+            } else if (clickedItem.tagName === 'BUTTON') {
+                const deleteItemList = clickedItem.parentElement;
+                deleteItemList.remove();
+            }
+        }
+    }, 200);
 });
 
 if (listBtn) {
     listBtn.addEventListener("click", addItem);
 }
+
+ulList.addEventListener("dblclick", (event) => {
+    clearTimeout(timer);
+    const clickedItem = event.target;
+    if (clickedItem.tagName === "LI") {
+        editInput = document.createElement("input");
+        editInput.type = "text";
+        editInput.value = clickedItem.firstChild.textContent;
+        ulList.replaceChild(editInput, clickedItem);
+
+        alert(`Edite o item e pressione Enter para confirmar`);
+        editInput.focus();
+    }
+})
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && editInput) {
+        const newLi = document.createElement("li");
+        newLi.textContent = editInput.value;
+        ulList.replaceChild(newLi, editInput);
+        const removeBtnList = document.createElement("button");
+        const removeBtnListText = document.createTextNode(" Remover");
+        removeBtnList.style.marginLeft = "15px";
+        removeBtnList.appendChild(removeBtnListText);
+        newLi.appendChild(removeBtnList);
+        editInput = null;
+    }
+})
 
 //Tabela Dinâmica:
 //Crie um formulário com dois campos: "Nome" e "Idade".
@@ -136,7 +181,7 @@ const tableBtn = document.getElementById("table-btn");
 
 const addPeople = (event) => {
     event.preventDefault();
-    if (inputName.value.trim() === "" || inputAge.value.trim === "") {
+    if (inputName.value.trim() === "" || inputAge.value.trim() === "") {
         alert("Preencha todos os campos.");
     }
 
@@ -165,10 +210,19 @@ const addPeople = (event) => {
 
 tableBtn.addEventListener("click", addPeople);
 
+const previousRow = currentRow.previousElementSibling;
+colorTable = null;
 tBody.addEventListener("click", (event) => {
+    const row = event.target.closest("tr");
     if (event.target.classList.contains("remove-btn")) {
-        const row = event.target.closest("tr");
         row.remove();
+    } else if (colorTable === null) {
+        const row = event.target.closest("tr");
+        row.style.backgroundColor = "lightblue";
+        colorTable = row.style.backgroundColor;
+    } else {
+        row.style.backgroundColor = "";
+        colorTable = null;
     }
 });
 
