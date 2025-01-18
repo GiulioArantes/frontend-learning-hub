@@ -84,15 +84,41 @@ if (stringInput) {
 
 const listBtn = document.getElementById("list-btn");
 const listContainer = document.querySelector(".list");
-
+const ulList = document.getElementById("ul");
+const style = document.createElement("style");
 
 const addItem = () => {
-    const ulList = document.getElementById("ul");
     const itemList = document.createElement("li");
-    const liText = document.createTextNode("Item");
+    const liText = document.createTextNode("Item ");
+    const removeBtnList = document.createElement("button");
+    const removeBtnListText = document.createTextNode(" Remover");
+    removeBtnList.style.marginLeft = "15px";
+    removeBtnList.appendChild(removeBtnListText);
     itemList.appendChild(liText);
     ulList.appendChild(itemList);
-}
+    ulList.appendChild(removeBtnList);
+};
+
+//Delegação de eventos ul, li. 
+//Marcar o item como concluído.
+
+ulList.addEventListener("click", (event) => {
+    const clickedItem = event.target;
+    if (clickedItem.classList.contains("completed")) {
+        clickedItem.classList.remove("completed");
+        alert(`Você desmarcou o item: ${clickedItem.textContent}`);
+    } else if (clickedItem.classList.length === 0) {
+        clickedItem.classList.add("completed");
+        style.textContent = `
+        .completed::after {
+        content: '\\2713';
+        color: green;
+        margin-left: 3px;
+        }`;
+        document.head.appendChild(style);
+        alert(`Você clicou no item: ${clickedItem.textContent}`);
+    }
+});
 
 if (listBtn) {
     listBtn.addEventListener("click", addItem);
@@ -101,8 +127,7 @@ if (listBtn) {
 //Tabela Dinâmica:
 //Crie um formulário com dois campos: "Nome" e "Idade".
 //Adicione um botão "Adicionar à Tabela".
-//Sempre que o botão for clicado, insira uma nova linha
-// na tabela com os valores dos campos.
+//Sempre que o botão for clicado, insira uma nova linha na tabela com os valores dos campos.
 
 const inputName = document.getElementById("nome");
 const inputAge = document.getElementById("idade");
@@ -111,17 +136,38 @@ const tableBtn = document.getElementById("table-btn");
 
 const addPeople = (event) => {
     event.preventDefault();
+    if (inputName.value.trim() === "" || inputAge.value.trim === "") {
+        alert("Preencha todos os campos.");
+    }
 
     const tr = document.createElement("tr");
     const tdName = document.createElement("td");
     const tdAge = document.createElement("td");
+    const tdAction = document.createElement("td");
 
     tdName.textContent = inputName.value;
     tdAge.textContent = inputAge.value;
 
+    // Botão de remoção
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remover";
+    removeBtn.classList.add("remove-btn");
+    tdAction.appendChild(removeBtn);
+
     tr.appendChild(tdName);
     tr.appendChild(tdAge);
+    tr.appendChild(tdAction);
     tBody.appendChild(tr);
+
+    inputName.value = "";
+    inputAge.value = "";
 }
 
 tableBtn.addEventListener("click", addPeople);
+
+tBody.addEventListener("click", (event) => {
+    if (event.target.classList.contains("remove-btn")) {
+        const row = event.target.closest("tr");
+        row.remove();
+    }
+});

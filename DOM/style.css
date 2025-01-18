@@ -70,8 +70,13 @@ body {
 }
 
 #ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    justify-content: center;
     list-style: none;
     padding: 0;
+    margin: 10px;
 }
 
 ul li {
