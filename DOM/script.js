@@ -186,10 +186,10 @@ const addPeople = (event) => {
     }
 
     const tr = document.createElement("tr");
+    tr.classList.add("standard-tr");
     const tdName = document.createElement("td");
     const tdAge = document.createElement("td");
     const tdAction = document.createElement("td");
-
     tdName.textContent = inputName.value;
     tdAge.textContent = inputAge.value;
 
@@ -210,19 +210,20 @@ const addPeople = (event) => {
 
 tableBtn.addEventListener("click", addPeople);
 
-const previousRow = currentRow.previousElementSibling;
-colorTable = null;
 tBody.addEventListener("click", (event) => {
     const row = event.target.closest("tr");
+    const allrows = document.querySelectorAll("tr");
     if (event.target.classList.contains("remove-btn")) {
         row.remove();
-    } else if (colorTable === null) {
-        const row = event.target.closest("tr");
-        row.style.backgroundColor = "lightblue";
-        colorTable = row.style.backgroundColor;
+    } else if (row.classList.contains("color-row")) {
+        row.classList.remove("color-row");
     } else {
-        row.style.backgroundColor = "";
-        colorTable = null;
+        style.textContent = `
+        .color-row {
+        background-color: lightblue;
+        }`;
+        document.head.appendChild(style);
+        row.classList.add("color-row");
     }
 });
 
