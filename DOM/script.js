@@ -87,14 +87,14 @@ const listContainer = document.querySelector(".list");
 const ulList = document.getElementById("ul");
 const style = document.createElement("style");
 const inputItem = document.getElementById("unit-item");
+const inputCategory = document.querySelector("#category");
 
 const addItem = () => {
-    if (inputItem.value.trim() === "") {
+    if (inputItem.value.trim() === "" || inputCategory.value.trim() === "") {
         alert(`Digite o item que deseja adicionar`);
     } else {
-        alertMessage = inputItem.value;
         const itemList = document.createElement("li");
-        itemList.textContent = inputItem.value;
+        itemList.textContent = inputItem.value + "(" + inputCategory.value + ")";
         const removeBtnList = document.createElement("button");
         const removeBtnListText = document.createTextNode(" Remover");
         removeBtnList.style.marginLeft = "15px";
@@ -212,17 +212,18 @@ tableBtn.addEventListener("click", addPeople);
 
 tBody.addEventListener("click", (event) => {
     const row = event.target.closest("tr");
-    const allrows = document.querySelectorAll("tr");
     if (event.target.classList.contains("remove-btn")) {
         row.remove();
     } else if (row.classList.contains("color-row")) {
         row.classList.remove("color-row");
-    } else {
+    } else if (row) {
+        const allRows = document.querySelectorAll("tr");
         style.textContent = `
         .color-row {
         background-color: lightblue;
         }`;
         document.head.appendChild(style);
+        allRows.forEach((row) => row.classList.remove("color-row"));
         row.classList.add("color-row");
     }
 });

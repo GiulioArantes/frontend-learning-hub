@@ -59,16 +59,6 @@ body {
     padding: 0 1rem 1rem 0;
 }
 
-.list {
-    border: var(--main-border);
-    margin-top: 20px;
-    min-height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f9f9f9;
-}
-
 #ul {
     display: flex;
     flex-direction: column;
@@ -86,7 +76,7 @@ ul li {
     border-radius: 4px;
 }
 
-form input {
+input {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -122,4 +112,14 @@ td {
 
 th {
     background-color: #f4f4f4;
+}
+
+.list {
+    border: var(--main-border);
+    margin-top: 20px;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
 }
