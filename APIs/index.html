@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Procure o seu Pokemon preferido!">
+    <title>API Pokemon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="body-style">
+    <main class="main-style">
+        <h1>Busca de Pokemon</h1>
+        <label for="poke-name">Pokemon: </label>
+        <input type="text" name="poke-name" id="poke-name">
+        <button id="fetch-poke">Pesquisar</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Imagem</th>
+                    <th>Tipo</th>
+                </tr>
+            </thead>
+            <tbody id="poke-table-body">
+
+            </tbody>
+        </table>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
