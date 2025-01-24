@@ -1,0 +1,57 @@
+@keyframes move {
+    0% {
+        transform: translateY(0em);
+    }
+
+    40% {
+        transform: translateY(2em);
+    }
+
+    80% {
+        transform: translateY(4em);
+    }
+
+    100% {
+        transform: translateY(6em);
+    }
+}
+
+@keyframes color {
+    0% {
+        background-color: blue;
+    }
+
+    20% {
+        background-color: purple;
+    }
+
+    40% {
+        background-color: blueviolet;
+    }
+
+    80% {
+        background-color: violet;
+    }
+
+    100% {
+        background-color: blue;
+    }
+}
+
+@keyframes expanding {
+    0% {
+        transform: scale(1.2);
+    }
+
+    40% {
+        transform: scale(1.5);
+    }
+
+    80% {
+        transform: scale(1.7);
+    }
+
+    100% {
+        transform: scale(2);
+    }
+}
