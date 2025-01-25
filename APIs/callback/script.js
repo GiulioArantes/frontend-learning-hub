@@ -64,59 +64,55 @@ calculadora(1, 1, "-", (result) => {
 //Crie três funções que simulam animações (ex.: mover um elemento, alterar sua cor, aumentar seu tamanho).
 //Encadeie essas funções usando callbacks para criar uma sequência.
 
-const movingDiv = document.createElement("div");
-const coloringDiv = document.createElement("div");
-const expandingDiv = document.createElement("div");
-const animationSection = document.createElement("section");
-const main = document.querySelector("main");
+//const movingDiv = document.createElement("div");
+//const coloringDiv = document.createElement("div");
+//const expandingDiv = document.createElement("div");
+// const animationSection = document.createElement("section");
+// const main = document.querySelector("main");
 
-main.appendChild(animationSection);
-animationSection.appendChild(movingDiv);
-animationSection.appendChild(coloringDiv);
-animationSection.appendChild(expandingDiv);
+// main.appendChild(animationSection);
+// animationSection.appendChild(movingDiv);
+// animationSection.appendChild(coloringDiv);
+// animationSection.appendChild(expandingDiv);
 
-movingDiv.classList.add("moving-div");
-coloringDiv.classList.add("coloring-div");
-expandingDiv.classList.add("expanding-div");
+// movingDiv.classList.add("moving-div");
+// coloringDiv.classList.add("coloring-div");
+// expandingDiv.classList.add("expanding-div");
 
-const style = document.createElement("style");
-style.textContent = `
-    body {
-        width: 100%;
-        height: 100%;
-    }
-    div {
-        width: 10vw;
-        height: 10vh;
-        background-color: blue;
-    }
-    section {
-        display: flex;
-        justify-content: space-around;
-        gap: 1rem;
-    }`
-document.head.appendChild(style);
+// const style = document.createElement("style");
+// style.textContent = `
+//     div {
+//         width: 7vw;
+//         height: 7vh;
+//         background-color: blue;
+//     }
+//     section {
+//         display: flex;
+//         justify-content: space-around;
+//         gap: 1rem;
+//     }`
+// document.head.appendChild(style);
 
-function animarElemento(element, callback) {
-    if (element === movingDiv) {
-        element.style.animation = "move 5s linear";
-    }
-    else if (element === expandingDiv) {
-        element.style.animation = "expanding 5s linear";
-    }
-    else {
-        element.style.animation = "color 5s ease-out ";
-    }
+// function animarElemento(element, callback) {
+//     if (element === movingDiv) {
+//         element.style.animation = "move 0s linear";
+//     }
+//     else if (element === expandingDiv) {
+//         element.style.animation = "expanding 0s linear";
+//     }
+//     else {
+//         element.style.animation = "color 0s ease-out ";
+//     }
 
 
-    element.addEventListener("animationend", () => {
-        callback();
-    }, { once: true });
-}
+//     element.addEventListener("animationend", () => {
+//         callback();
+//     }, { once: true });
+// }
 
-animarElemento(movingDiv, () => { console.log("animação concluída!") });
-animarElemento(expandingDiv, () => { console.log("animação concluída!") });
-animarElemento(coloringDiv, () => { console.log("animação concluída!") });
+//animarElemento(movingDiv, () => { console.log("animação concluída!") });
+//animarElemento(expandingDiv, () => { console.log("animação concluída!") });
+//animarElemento(coloringDiv, () => { console.log("animação concluída!") });
 //Final
 
 //Leitura assíncrona de arquivos: 
@@ -144,3 +140,47 @@ lerArquivo1((conteudo1) => {
 });
 //Final
 
+//Consumir uma API de Posts com Callback
+//Faça uma requisição para a API
+// https://jsonplaceholder.typicode.com/posts
+// que retorna uma lista de posts.
+//Crie um callback que exiba os títulos dos posts.
+
+const ulPosts = document.querySelector("#posts");
+const btnPosts = document.querySelector("#btn-posts");
+
+function processPosts() {
+    $.get("https://jsonplaceholder.typicode.com/posts", (posts) => {
+        posts.forEach(post => {
+            const unitPost = document.createElement("li");
+            unitPost.textContent = post.title;
+            ulPosts.appendChild(unitPost);
+        });
+    });
+}
+
+btnPosts.addEventListener("click", processPosts);
+//Final
+
+//2. Consumir uma API de Comentários com Callback:
+//Faça uma requisição para a API 
+// https://jsonplaceholder.typicode.com/comments 
+// que retorna uma lista de comentários.
+//Crie um callback que filtre os comentários com postId igual a 1 e 
+// exiba o texto do comentário.
+
+const btnComments = document.querySelector("#btn-comments");
+
+function processComments() {
+    $.get("https://jsonplaceholder.typicode.com/comments", (comments) => {
+        comments.forEach(comment => {
+            if (comment.postId === 1) {
+                const unitcomment = document.createElement("li");
+                unitcomment.textContent = comment.body;
+                ulPosts.appendChild(unitcomment);
+            }
+        });
+    });
+}
+
+btnComments.addEventListener("click", processComments);

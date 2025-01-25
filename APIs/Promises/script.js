@@ -105,3 +105,16 @@ Promise.race([
     .then((result) => console.log(result))
     .catch((error) => console.log(error));
 //Final
+
+//1. Consumir uma API de Tarefas com Promise:
+//Faça uma requisição para a API https://jsonplaceholder.typicode.com/todos que retorna uma lista de tarefas.
+//Filtre as tarefas que estão marcadas como "completadas" e exiba o título delas.
+
+fetch("https://jsonplaceholder.typicode.com/todos")
+    .then((response) => response.json())
+    .then(data => {
+        data.forEach(user) => {
+            if (user.completed === true) {
+
+            }
+        })
