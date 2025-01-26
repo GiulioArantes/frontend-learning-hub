@@ -62,3 +62,22 @@ async function parallel() {
 }
 
 parallel();
+
+//1. Consumir uma API de Posts com Async/Await:
+//Faça uma requisição para a API https://jsonplaceholder.typicode.com/posts que retorna uma lista de posts.
+//Use async/await para buscar os posts e exibir o corpo do post.
+
+const olPosts = document.querySelector("ol");
+const btnPosts = document.querySelector("#btn-posts");
+
+async function processPosts() {
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const datas = await response.json();
+    datas.forEach(data => {
+        const li = document.createElement("li");
+        li.textContent = data.body;
+        olPosts.appendChild(li);
+    })
+}
+
+btnPosts.addEventListener("click", processPosts);

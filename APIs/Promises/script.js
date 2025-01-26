@@ -110,11 +110,48 @@ Promise.race([
 //Faça uma requisição para a API https://jsonplaceholder.typicode.com/todos que retorna uma lista de tarefas.
 //Filtre as tarefas que estão marcadas como "completadas" e exiba o título delas.
 
-fetch("https://jsonplaceholder.typicode.com/todos")
-    .then((response) => response.json())
-    .then(data => {
-        data.forEach(user) => {
-            if (user.completed === true) {
+const olTasks = document.querySelector("#ol-tasks");
+const btnTasks = document.querySelector("#btn-tasks");
 
-            }
+function tasksDone() {
+    fetch("https://jsonplaceholder.typicode.com/todos")
+        .then((response) => response.json())
+        .then(data => {
+            data.forEach(user => {
+                if (user.completed === true) {
+                    const task = user.title;
+                    const liTasks = document.createElement("li");
+                    liTasks.textContent = task;
+                    olTasks.appendChild(liTasks);
+                }
+            });
         })
+        .catch(error => {
+            console.log("Erro ao obter os dados", error);
+        });
+}
+btnTasks.addEventListener("click", tasksDone);
+
+//2. Consumir uma API de Usuários com Promise:
+//Faça uma requisição para a API https://jsonplaceholder.typicode.com/users que retorna uma lista de usuários.
+//Filtre os usuários que possuem o nome com mais de 10 caracteres e exiba seus nomes e e-mails.
+
+function processData() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+        .then((response) => response.json())
+        .then(data => {
+            data.forEach(user => {
+                const nameCount = user.name.length;
+                if (nameCount > 10) {
+                    const li = document.createElement("li");
+                    li.textContent = `Nome: ${user.name} - Email:${user.email}`;
+                    olTasks.appendChild(li);
+                }
+            });
+        })
+        .catch(error => {
+            console.log("Erro ao obter os dados", error);
+        });
+}
+const btnProcessData = document.querySelector("#btn-process-data");
+btnProcessData.addEventListener("click", processData);
