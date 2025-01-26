@@ -79,5 +79,82 @@ async function processPosts() {
         olPosts.appendChild(li);
     })
 }
-
 btnPosts.addEventListener("click", processPosts);
+
+//2. Consumir uma API de Comentários com Async/Await:
+//Faça uma requisição para a API https://jsonplaceholder.typicode.com/comments que retorna uma lista de comentários.
+//Use async/await para buscar os comentários e exibir os comentários com email contendo o domínio "gmail.com".
+
+async function processComments() {
+    const response = await fetch("https://jsonplaceholder.typicode.com/comments");
+    const comments = await response.json();
+    comments.forEach(comment => {
+        if (comment.email.includes(".com")) {
+            const li = document.createElement("li");
+            li.textContent = comment.email;
+            olPosts.appendChild(li);
+        }
+    })
+}
+const btnEmails = document.querySelector("#btn-emails");
+btnEmails.addEventListener("click", processComments);
+
+//API de Filmes
+
+const moviesBody = document.querySelector("#movies-body");
+async function processMovies() {
+    try {
+        const response = await fetch("https://api.tvmaze.com/search/shows?q=star");
+        if (!response.ok) {
+            throw new Error(`Erro na requisição ${response.status}`);
+        }
+        const movies = await response.json();
+        movies.forEach(movie => {
+            const tdName = document.createElement("td");
+            tdName.textContent = movie.show.name;
+
+            const tdLanguage = document.createElement("td");
+            tdLanguage.textContent = movie.show.language;
+
+            const tr = document.createElement("tr");
+            tr.appendChild(tdName);
+            tr.appendChild(tdLanguage);
+            moviesBody.appendChild(tr);
+        })
+    }
+    catch (error) {
+        console.error("Erro ao processar os filmes", error);
+    }
+    finally {
+        alert(`Sua solicitação foi concluída!`);
+    }
+}
+const btnMovies = document.querySelector("#btn-movies");
+btnMovies.addEventListener("click", processMovies);
+
+//Exercício 2: API de Países
+
+async function searchCountries() {
+    let count = 0;
+    try {
+        response = await fetch("https://restcountries.com/v3.1/all");
+        if (!response.ok) {
+            throw new Error(`Erro na requisição ${response.status}`);
+        }
+        contries = await response.json();
+        contries.forEach(country => {
+            if (country.name.common.startsWith("B")) {
+                const li = document.createElement("li");
+                li.textContent = `${country.name.common} - ${country.region}`;
+                olPosts.appendChild(li);
+                count++;
+            }
+        })
+    } catch (error) {
+        console.error("Erro ao buscar países, tente novamente mais tarde", error);
+    } finally {
+        alert(`O total de países encontrados foram: ${count}`);
+    }
+}
+const btnCountry = document.querySelector("#btn-country");
+btnCountry.addEventListener("click", searchCountries);
