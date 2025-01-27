@@ -158,3 +158,40 @@ async function searchCountries() {
 }
 const btnCountry = document.querySelector("#btn-country");
 btnCountry.addEventListener("click", searchCountries);
+
+//Exercício 3: API de Astronomia
+
+const nasaBody = document.querySelector("#nasa-body");
+async function nasaMidia() {
+    try {
+        const response = await fetch("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
+        if (!response.ok) {
+            throw new Error(`Erro na requisição ${response.status}`);
+        }
+        const midias = await response.json();
+
+        const tdTitle = document.createElement("td");
+        tdTitle.textContent = midias.title;
+
+        const tdDescription = document.createElement("td");
+        tdDescription.textContent = midias.explanation;
+
+        const imgUrl = document.createElement("img");
+        imgUrl.setAttribute("src", midias.url);
+        const tdImg = document.createElement("td");
+        tdImg.appendChild(imgUrl);
+
+        const tr = document.createElement("tr");
+        tr.appendChild(tdTitle);
+        tr.appendChild(tdDescription);
+        tr.appendChild(tdImg);
+        nasaBody.appendChild(tr);
+    } catch (error) {
+        console.error(`Erro na sua solicitação: ${error}`);
+    } finally {
+        alert(`Requisição concluída, sucesso ou falha`)
+    }
+}
+
+const btnNasa = document.querySelector("#btn-nasa");
+btnNasa.addEventListener("click", nasaMidia);
