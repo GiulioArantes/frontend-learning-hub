@@ -1,24 +1,24 @@
 .container {
-    display: grid;
-    grid-column: 1fr;
-    justify-content: center;
+  display: grid;
+  grid-column: 1fr;
+  justify-content: center;
 }
 
 .quadrado {
-    width: 10vw;
-    height: 10vh;
-    background-color: red;
-    position: relative;
-    left: -30vw;
-    animation: movimento 2s;
+  width: 10vw;
+  height: 10vh;
+  background-color: red;
+  position: relative;
+  left: -30vw;
+  animation: movimento 2s;
 }
 
 @keyframes movimento {
-    0% {
-        left: -30vw;
-    }
+  0% {
+    left: -30vw;
+  }
 
-    100% {
-        left: 60vw;
-    }
+  100% {
+    left: 60vw;
+  }
 }

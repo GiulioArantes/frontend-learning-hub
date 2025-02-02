@@ -1,0 +1,8 @@
+# Ignorar arquivos gerados/compilados
+node_modules/
+package-lock.json
+dist/
+*.min.js
+
+# Ignorar arquivos de configuração local (se necessário)
+# .env

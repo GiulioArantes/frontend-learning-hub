@@ -20,5 +20,6 @@ Acesse o projeto online em: [GitHub Pages](https://giulioarantes.github.io/meu-p
 ## Contato
 
 Caso queira entrar em contato comigo:
+
 - **Email**: giulio.arantes@icloud.com
 - **LinkedIn**: [Giulio Arantes](https://linkedin.com/in/giulio-arantes)
