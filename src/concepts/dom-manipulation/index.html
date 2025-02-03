@@ -1,51 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Veja como usar o DOM!">
+    <meta name="description" content="Veja como usar o DOM!" />
     <title>Práticas com DOM</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <header class="header">
-            <h1 id="title">Veja como o DOM é incrível!</h1>
-        </header>
-        <main>
-            <div class="sections">
+      <header class="header">
+        <h1 id="title">Veja como o DOM é incrível!</h1>
+      </header>
+      <main>
+        <div class="sections">
+          <section id="first-section">
+            <p id="para-alt">
+              Para entender mais sobre o DOM é preciso ter, no mínimo, um conhecimento
+              básico em HTML, CSS e javaScript.
+            </p>
+            <button id="action-btn">Click Here</button>
+          </section>
 
-                <section id="first-section">
-                    <p id="para-alt">Para entender mais sobre o DOM é preciso ter, no mínimo, um conhecimento
-                        básico em HTML, CSS e javaScript.</p>
-                    <button id="action-btn">Click Here</button>
-                </section>
+          <section>
+            <label for="text">Texto:</label>
+            <br />
+            <textarea
+              name="textarea"
+              id="textarea"
+              placeholder="Digite um texto"
+            ></textarea>
+            <input type="text" name="text" id="realtime-text" />
+          </section>
 
-                <section>
-                    <label for="text">Texto: </label> <br>
-                    <textarea name="textarea" id="textarea" placeholder="Digite um texto"></textarea>
-                    <input type="text" name="text" id="realtime-text" />
-                </section>
+          <section>
+            <button id="color-btn">Click Here</button>
+          </section>
 
-                <section>
-                    <button id="color-btn">Click Here</button>
-                </section>
+          <section id="fourth-section">
+            <label for="keydown-test">Tente digitar 1:</label>
+            <input type="text" id="keydown-test" />
+          </section>
 
-                <section id="fourth-section">
-                    <label for="keydown-test">Tente digitar 1:</label>
-                    <input type="text" id="keydown-test">
-                </section>
-
-                <section>
-                    <button><a href="projectEvent.html">Lista</a></button>
-                </section>
-
-            </div>
-        </main>
+          <section>
+            <button><a href="projectEvent.html">Lista</a></button>
+          </section>
+        </div>
+      </main>
     </div>
     <script src="script.js" defer></script>
-</body>
-
+  </body>
 </html>

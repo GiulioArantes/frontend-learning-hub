@@ -1,49 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Olha essa lista.">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Olha essa lista." />
+    <link rel="stylesheet" href="style.css" />
     <title>Lista DOM</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <h1>Adicione itens a lista</h1>
-        <form>
+      <h1>Adicione itens a lista</h1>
+      <form>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" required />
 
-            <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome" required />
+        <label for="idade">Idade:</label>
+        <input type="number" name="idade" id="idade" min="1" max="120" />
 
-            <label for="idade">Idade:</label>
-            <input type="number" name="idade" id="idade" min="1" max="120" />
+        <button id="table-btn">Adicionar a tabela</button>
 
-            <button id="table-btn">Adicionar a tabela</button>
-
-            <table class="dinamic-table">
-                <thead>
-                    <th>Nome</th>
-                    <th>Idade</th>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
-            <label for="unit-item">Item: </label>
-            <input type="text" name="unit-item" id="unit-item" required>
-            <label for="">Categoria: </label>
-            <input type="text" name="category" id="category">
-            <button id="list-btn">adicionar item</button>
-            <div class="list">
-                <ul id="ul">
-
-                </ul>
-            </div>
-        </form>
-        <script src="script.js" defer></script>
+        <table class="dinamic-table">
+          <thead>
+            <th>Nome</th>
+            <th>Idade</th>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <label for="unit-item">Item:</label>
+        <input type="text" name="unit-item" id="unit-item" required />
+        <label for="">Categoria:</label>
+        <input type="text" name="category" id="category" />
+        <button id="list-btn">adicionar item</button>
+        <div class="list">
+          <ul id="ul"></ul>
+        </div>
+      </form>
+      <script src="script.js" defer></script>
     </div>
-</body>
-
+  </body>
 </html>

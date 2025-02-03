@@ -1,92 +1,92 @@
 /* Estilo padrão (desktop) */
 :root {
-    /* Cores*/
-    --color-white: #fafafa;
-    --color-blacky: black;
-    --color-success: #28a745;
-    /* Fontes */
-    --font-cursive: 'Apple Chancery, cursive';
-    /* Espaçamento */
-    --spacing-xs: 8px;
-    --spacing-md: 16px;
+  /* Cores*/
+  --color-white: #fafafa;
+  --color-blacky: black;
+  --color-success: #28a745;
+  /* Fontes */
+  --font-cursive: 'Apple Chancery, cursive';
+  /* Espaçamento */
+  --spacing-xs: 8px;
+  --spacing-md: 16px;
 }
 
 body {
-    margin: 0;
-    font-family: var(--font-cursive);
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-        "header"
-        "content"
-        "footer";
-    background-color: #f4f4f4;
+  margin: 0;
+  font-family: var(--font-cursive);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    'header'
+    'content'
+    'footer';
+  background-color: #f4f4f4;
 }
 
 .header {
-    grid-area: header;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
+  grid-area: header;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
 }
 
 .content {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 1rem;
-    grid-area: content;
-    padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1rem;
+  grid-area: content;
+  padding: 1rem;
 }
 
 .sidebar {
-    background-color: #c0c0c0;
-    padding: 1rem;
+  background-color: #c0c0c0;
+  padding: 1rem;
 }
 
 .main {
-    background-color: #c0c0c0;
-    padding: 1rem;
+  background-color: #c0c0c0;
+  padding: 1rem;
 }
 
 .footer {
-    grid-area: footer;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
+  grid-area: footer;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
 }
 
 /* Estilo para telas menores (mobile) */
 @media (max-width: 768px) {
-    body {
-        height: 100vh;
-        background-color: #2e2e2e;
-        grid-template-rows: auto 1fr auto;
-        grid-template-areas:
-            "header"
-            "content"
-            "footer";
-    }
+  body {
+    height: 100vh;
+    background-color: #2e2e2e;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      'header'
+      'content'
+      'footer';
+  }
 
-    .header,
-    .footer {
-        background-color: var(--color-white);
-        color: black;
-    }
+  .header,
+  .footer {
+    background-color: var(--color-white);
+    color: black;
+  }
 
-    .content {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 10% 10%;
-        gap: 1rem;
-    }
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 10%;
+    gap: 1rem;
+  }
 
-    .sidebar {
-        order: 2;
-    }
+  .sidebar {
+    order: 2;
+  }
 
-    .main {
-        order: 1;
-    }
+  .main {
+    order: 1;
+  }
 }

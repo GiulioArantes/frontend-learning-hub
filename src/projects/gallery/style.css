@@ -1,64 +1,63 @@
 /* Inclui o flexbox para o menu*/
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 /* Inclui o flexbox para o menu e fiz uma estilização básica*/
 ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-around;
-    margin-right: 20px;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  margin-right: 20px;
 }
 
 /* Não tem nenhum intuito aqui, só experimentos com flexbox*/
 .flex-animais:nth-child(2) {
-    order: 5;
+  order: 5;
 }
 
 /* estilização básica*/
 li a {
-    padding: 10px 20px;
-    text-decoration: none;
-    color: blue;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: blue;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 /* estilização básica*/
 li a:hover {
-    color: blueviolet;
+  color: blueviolet;
 }
 
 /* estilização básica*/
 h1 {
-    font-family: 'Arial', sans-serif;
-    font-size: 36px;
-    color: blueviolet;
-    text-align: center;
-    margin-top: 20px;
+  font-family: 'Arial', sans-serif;
+  font-size: 36px;
+  color: blueviolet;
+  text-align: center;
+  margin-top: 20px;
 }
 
 /* Inclui o grid para a galeria de imagens*/
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, auto));
-    row-gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+  row-gap: 30px;
 }
 
 @media (max-width: 768px) {
-
-    /* tanto o flexbox quanto o grid, aqui são alterados a disposição
+  /* tanto o flexbox quanto o grid, aqui são alterados a disposição
    para melhor visualização em dispositivos menores*/
-    .flex-lista {
-        flex-flow: row wrap;
-    }
+  .flex-lista {
+    flex-flow: row wrap;
+  }
 
-    .grid-container {
-        grid-template-columns: repeat(auto-fit, minmax(300px, auto));
-        justify-items: center;
-    }
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    justify-items: center;
+  }
 }

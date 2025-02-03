@@ -1,75 +1,75 @@
 :root {
-    /* Cores */
-    --color-white: #fafafa;
-    --color-black: black;
-    --color-success: #28a745;
+  /* Cores */
+  --color-white: #fafafa;
+  --color-black: black;
+  --color-success: #28a745;
 
-    /* Fontes */
-    --font-cursive: 'Apple Chancery, cursive';
+  /* Fontes */
+  --font-cursive: 'Apple Chancery, cursive';
 
-    /* Espaçamento */
-    --spacing-xs: 8px;
-    --spacing: 16px;
+  /* Espaçamento */
+  --spacing-xs: 8px;
+  --spacing: 16px;
 
-    /* Borda */
-    --main-border: 2px solid blue;
-    --discreet-border: 1px solid #ddd;
+  /* Borda */
+  --main-border: 2px solid blue;
+  --discreet-border: 1px solid #ddd;
 
-    /* Fundo */
-    --main-background: #f0f0f0;
-    --opcional-background: #ffffff;
+  /* Fundo */
+  --main-background: #f0f0f0;
+  --opcional-background: #ffffff;
 
-    /* Botões e inputs */
-    --style-button: 1px solid #ccc;
+  /* Botões e inputs */
+  --style-button: 1px solid #ccc;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .body-style {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    min-width: 100vw;
-    background-color: var(--main-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: var(--main-background);
 }
 
 .main-style {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    border: var(--discreet-border);
-    background-color: var(--opcional-background);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 600px;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: var(--discreet-border);
+  background-color: var(--opcional-background);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
 }
 
 input,
 button {
-    padding: 0.3rem;
-    border: var(--style-button);
-    border-radius: 4px;
-    width: 70%;
-    align-self: center;
+  padding: 0.3rem;
+  border: var(--style-button);
+  border-radius: 4px;
+  width: 70%;
+  align-self: center;
 }
 
 button {
-    background-color: #ff0000b9;
-    color: var(--opcional-background);
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-    transition: 0.5s;
+  background-color: #ff0000b9;
+  color: var(--opcional-background);
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: 0.5s;
 }
 
 button:hover {
-    background-color: #ff5959;
+  background-color: #ff5959;
 }

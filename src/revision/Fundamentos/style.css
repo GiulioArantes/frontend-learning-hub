@@ -1,63 +1,62 @@
 body {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header,
 footer,
 ul {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 ul {
-    gap: 1rem;
-
+  gap: 1rem;
 }
 
 ul li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 ul li a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 main {
-    flex: 1;
+  flex: 1;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 3rem auto;
 }
 
 label {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 input,
 textarea {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
 }
 
 button {
-    padding: 0.5rem;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    cursor: pointer;
+  padding: 0.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 footer p {
-    text-align: center;
-    width: 100%;
+  text-align: center;
+  width: 100%;
 }

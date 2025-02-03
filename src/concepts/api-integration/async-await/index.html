@@ -1,59 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aprendendo sobre AsyncAwait">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Aprendendo sobre AsyncAwait" />
+    <link rel="stylesheet" href="style.css" />
     <title>Async/Await</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <main>
-        <h1>Async/Await</h1>
-        <h2>Aqui estão os diversos exercícios que envolvem Async/Await</h2>
-        <div id="error-manipulation">
-            <label for="possible-error">Não digite números acima de 10!</label>
-            <input type="number" name="possible-error" id="possible-error">
-            <button>Enviar</button>
-        </div>
-        <button id="btn-posts">Buscar posts</button>
-        <button id="btn-emails">Buscar email</button>
-        <button id="btn-country">Buscar países</button>
-        <ol>
+      <h1>Async/Await</h1>
+      <h2>Aqui estão os diversos exercícios que envolvem Async/Await</h2>
+      <div id="error-manipulation">
+        <label for="possible-error">Não digite números acima de 10!</label>
+        <input type="number" name="possible-error" id="possible-error" />
+        <button>Enviar</button>
+      </div>
+      <button id="btn-posts">Buscar posts</button>
+      <button id="btn-emails">Buscar email</button>
+      <button id="btn-country">Buscar países</button>
+      <ol></ol>
+      <div>
+        <button id="btn-movies">Buscar Filmes</button>
+        <table>
+          <thead>
+            <th>Nome</th>
+            <th>Linguagem</th>
+          </thead>
+          <tbody id="movies-body"></tbody>
+        </table>
+      </div>
 
-        </ol>
-        <div>
-            <button id="btn-movies">Buscar Filmes</button>
-            <table>
-                <thead>
-                    <th>Nome</th>
-                    <th>Linguagem</th>
-                </thead>
-                <tbody id="movies-body">
-
-                </tbody>
-            </table>
-        </div>
-
-        <div>
-            <button id="btn-nasa">Atualizações NASA</button>
-            <table>
-                <thead>
-                    <th>Título</th>
-                    <th>Descrição</th>
-                    <th>Mídia</th>
-                </thead>
-                <tbody id="nasa-body">
-
-                </tbody>
-            </table>
-        </div>
-
+      <div>
+        <button id="btn-nasa">Atualizações NASA</button>
+        <table>
+          <thead>
+            <th>Título</th>
+            <th>Descrição</th>
+            <th>Mídia</th>
+          </thead>
+          <tbody id="nasa-body"></tbody>
+        </table>
+      </div>
     </main>
-</body>
+  </body>
 
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </html>

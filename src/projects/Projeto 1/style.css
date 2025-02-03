@@ -1,84 +1,82 @@
 body {
-    background-color: blanchedalmond;
-    text-align: center;
+  background-color: blanchedalmond;
+  text-align: center;
 }
 
 header {
-    background: linear-gradient(to top, blanchedalmond, lightblue);
+  background: linear-gradient(to top, blanchedalmond, lightblue);
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    background: linear-gradient(to top, blanchedalmond, lightblue);
-    padding: 10px 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  background: linear-gradient(to top, blanchedalmond, lightblue);
+  padding: 10px 0;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: brown;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3 ease;
+  text-decoration: none;
+  color: brown;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3 ease;
 }
 
 h1 {
-    color: brown;
-    font-size: 65px;
+  color: brown;
+  font-size: 65px;
 }
 
 h2 {
-    font-family: 'Courier New', Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 p {
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 ol {
-    margin: 0px 20px;
+  margin: 0px 20px;
 }
 
 li {
-    font-family: Arial, sans-serif;
-    padding: 5px;
+  font-family: Arial, sans-serif;
+  padding: 5px;
 }
 
 footer ul li a {
-    color: brown;
-    text-decoration: none;
+  color: brown;
+  text-decoration: none;
 }
 
 footer ul li a:hover {
-    color: rgb(81, 0, 0);
+  color: rgb(81, 0, 0);
 }
 
 footer ul li a:visited {
-    color: rgb(158, 97, 97);
+  color: rgb(158, 97, 97);
 }
 
 button {
-    background-color: rgb(255, 208, 139);
-    color: brown;
-    padding: 2px 15px;
-    border-radius: 5px;
-    border-color: blanchedalmond;
-    cursor: pointer;
+  background-color: rgb(255, 208, 139);
+  color: brown;
+  padding: 2px 15px;
+  border-radius: 5px;
+  border-color: blanchedalmond;
+  cursor: pointer;
 }
 
-
-
 footer {
-    background: linear-gradient(to left, blanchedalmond, rgb(217, 213, 130));
+  background: linear-gradient(to left, blanchedalmond, rgb(217, 213, 130));
 }
 
 @media (max-width: 600px) {
-    h1 {
-        font-size: 45px;
-    }
+  h1 {
+    font-size: 45px;
+  }
 }

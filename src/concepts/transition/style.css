@@ -1,21 +1,22 @@
 body {
-    display: grid;
-    grid-column: 1fr;
-    justify-items: center;
+  display: grid;
+  grid-column: 1fr;
+  justify-items: center;
 }
 
 .btn {
-    width: 25%;
-    height: 20%;
-    border-radius: 5px;
-    background-color: aqua;
-    transition: width 0.5s ease,
-        height 0.5s ease,
-        background-color 0.5s ease-in;
+  width: 25%;
+  height: 20%;
+  border-radius: 5px;
+  background-color: aqua;
+  transition:
+    width 0.5s ease,
+    height 0.5s ease,
+    background-color 0.5s ease-in;
 }
 
 .btn:hover {
-    width: 35%;
-    height: 30%;
-    background-color: aquamarine;
+  width: 35%;
+  height: 30%;
+  background-color: aquamarine;
 }
