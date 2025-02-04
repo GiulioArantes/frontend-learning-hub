@@ -1,70 +1,70 @@
 // conditionals
-const userType = 'admin'
+const userType = 'admin';
 
 switch (userType) {
   case 'admin':
-    console.log('Acesso total ao painel.')
-    break
+    console.log('Acesso total ao painel.');
+    break;
   case 'editor':
-    console.log('Acesso para editar o conteúdo.')
-    break
+    console.log('Acesso para editar o conteúdo.');
+    break;
   case 'visitante':
-    console.log('Acesso limitado à visualização.')
-    break
+    console.log('Acesso limitado à visualização.');
+    break;
   default:
-    console.log('Tipo de usuário inválido.')
+    console.log('Tipo de usuário inválido.');
 }
 
-console.log('---')
+console.log('---');
 
-let shopCart = 'Produto 1'
-if (shopCart === '') console.log('Carrinho vazio')
-else console.log('Itens no carrinho')
+let shopCart = 'Produto 1';
+if (shopCart === '') console.log('Carrinho vazio');
+else console.log('Itens no carrinho');
 
-console.log('---')
+console.log('---');
 
-let day = 'Quarta'
+let day = 'Quarta';
 
 switch (day) {
   case 'Segunda':
-    console.log('Hoje você será produtivo!')
-    break
+    console.log('Hoje você será produtivo!');
+    break;
   case 'Terça':
-    console.log('Hoje o dia será desafiador!')
-    break
+    console.log('Hoje o dia será desafiador!');
+    break;
   case 'Quarta':
-    console.log('Hoje você receberá uma surpresa!')
-    break
+    console.log('Hoje você receberá uma surpresa!');
+    break;
   case 'Quinta':
-    console.log('Hoje você receberá um aumento!')
-    break
+    console.log('Hoje você receberá um aumento!');
+    break;
   case 'Sexta':
-    console.log('Fique atento aos detalhes.')
-    break
+    console.log('Fique atento aos detalhes.');
+    break;
   case 'Sábado':
-    console.log('Aproveite o dia para descansar!')
-    break
+    console.log('Aproveite o dia para descansar!');
+    break;
   case 'Domingo':
-    console.log('Porque ainda está aqui? Vá descansar!')
-    break
+    console.log('Porque ainda está aqui? Vá descansar!');
+    break;
 }
 
 //Loops
-const numbers = [2, 2, 2, 2, 2]
-let soma = 0
+const numbers = [2, 2, 2, 2, 2];
+let soma = 0;
 
 for (let i = 0; i < numbers.length; i++) {
-  soma += numbers[i]
+  soma += numbers[i];
 }
 
-console.log(soma)
-console.log('---')
+console.log(soma);
+console.log('---');
 
-const invertedNumbers = [5, 4, 3, 2, 1]
-let organize = []
+const invertedNumbers = [5, 4, 3, 2, 1];
+let organize = [];
 
 for (let i = 1; i <= invertedNumbers.length; i++) {
-  organize.push(invertedNumbers[invertedNumbers.length - i])
+  organize.push(invertedNumbers[invertedNumbers.length - i]);
 }
 
-console.log(organize)
+console.log(organize);

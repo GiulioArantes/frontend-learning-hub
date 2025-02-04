@@ -5,11 +5,11 @@
 // console.
 
 async function simularRequisicao() {
-  await new Promise(resolve => setTimeout(resolve, 2000))
-  console.log('Esperou 2 segundos!')
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+  console.log('Esperou 2 segundos!');
 }
 
-simularRequisicao()
+simularRequisicao();
 // Final
 
 //Manipulando erros com try/catch:
@@ -17,21 +17,21 @@ simularRequisicao()
 // que pode ser rejeitada.
 //Use try/catch para tratar o erro e exibi-lo no console.
 
-const inputError = document.querySelector('#possible-error')
-const btnError = document.querySelector('button')
+const inputError = document.querySelector('#possible-error');
+const btnError = document.querySelector('button');
 async function searchData() {
   try {
-    const number = parseInt(inputError.value, 10)
+    const number = parseInt(inputError.value, 10);
     const result = await new Promise((resolve, reject) => {
-      if (number <= 10) resolve('Número válido!')
-      else reject('Número muito grande!')
-    })
-    console.log('Sucesso', result)
+      if (number <= 10) resolve('Número válido!');
+      else reject('Número muito grande!');
+    });
+    console.log('Sucesso', result);
   } catch (error) {
-    console.error('Erro:', error)
+    console.error('Erro:', error);
   }
 }
-btnError.addEventListener('click', searchData)
+btnError.addEventListener('click', searchData);
 //Final
 
 //Execução paralela com async/await:
@@ -40,152 +40,154 @@ btnError.addEventListener('click', searchData)
 //Use Promise.all com async/await para executar ambas em paralelo e
 // exibir o resultado combinado.
 
-const promiseInfo = new Promise(resolve => {
+const promiseInfo = new Promise((resolve) => {
   setTimeout(() => {
-    resolve('João, 25 anos')
-  }, 1000)
-})
+    resolve('João, 25 anos');
+  }, 1000);
+});
 
-const promiseProcess = new Promise(resolve => {
+const promiseProcess = new Promise((resolve) => {
   setTimeout(() => {
-    resolve('Processamento concluído')
-  }, 3000)
-})
+    resolve('Processamento concluído');
+  }, 3000);
+});
 
 async function parallel() {
-  const [datas, process] = await Promise.all([promiseInfo, promiseProcess])
-  console.log({ datas, process })
+  const [datas, process] = await Promise.all([promiseInfo, promiseProcess]);
+  console.log({ datas, process });
 }
 
-parallel()
+parallel();
 
 //1. Consumir uma API de Posts com Async/Await:
 //Faça uma requisição para a API https://jsonplaceholder.typicode.com/posts que retorna uma lista de posts.
 //Use async/await para buscar os posts e exibir o corpo do post.
 
-const olPosts = document.querySelector('ol')
-const btnPosts = document.querySelector('#btn-posts')
+const olPosts = document.querySelector('ol');
+const btnPosts = document.querySelector('#btn-posts');
 
 async function processPosts() {
-  const response = await fetch('https://jsonplaceholder.typicode.com/posts')
-  const datas = await response.json()
-  datas.forEach(data => {
-    const li = document.createElement('li')
-    li.textContent = data.body
-    olPosts.appendChild(li)
-  })
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const datas = await response.json();
+  datas.forEach((data) => {
+    const li = document.createElement('li');
+    li.textContent = data.body;
+    olPosts.appendChild(li);
+  });
 }
-btnPosts.addEventListener('click', processPosts)
+btnPosts.addEventListener('click', processPosts);
 
 //2. Consumir uma API de Comentários com Async/Await:
 //Faça uma requisição para a API https://jsonplaceholder.typicode.com/comments que retorna uma lista de comentários.
 //Use async/await para buscar os comentários e exibir os comentários com email contendo o domínio "gmail.com".
 
 async function processComments() {
-  const response = await fetch('https://jsonplaceholder.typicode.com/comments')
-  const comments = await response.json()
-  comments.forEach(comment => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/comments');
+  const comments = await response.json();
+  comments.forEach((comment) => {
     if (comment.email.includes('.com')) {
-      const li = document.createElement('li')
-      li.textContent = comment.email
-      olPosts.appendChild(li)
+      const li = document.createElement('li');
+      li.textContent = comment.email;
+      olPosts.appendChild(li);
     }
-  })
+  });
 }
-const btnEmails = document.querySelector('#btn-emails')
-btnEmails.addEventListener('click', processComments)
+const btnEmails = document.querySelector('#btn-emails');
+btnEmails.addEventListener('click', processComments);
 
 //API de Filmes
 
-const moviesBody = document.querySelector('#movies-body')
+const moviesBody = document.querySelector('#movies-body');
 async function processMovies() {
   try {
-    const response = await fetch('https://api.tvmaze.com/search/shows?q=star')
+    const response = await fetch('https://api.tvmaze.com/search/shows?q=star');
     if (!response.ok) {
-      throw new Error(`Erro na requisição ${response.status}`)
+      throw new Error(`Erro na requisição ${response.status}`);
     }
-    const movies = await response.json()
-    movies.forEach(movie => {
-      const tdName = document.createElement('td')
-      tdName.textContent = movie.show.name
+    const movies = await response.json();
+    movies.forEach((movie) => {
+      const tdName = document.createElement('td');
+      tdName.textContent = movie.show.name;
 
-      const tdLanguage = document.createElement('td')
-      tdLanguage.textContent = movie.show.language
+      const tdLanguage = document.createElement('td');
+      tdLanguage.textContent = movie.show.language;
 
-      const tr = document.createElement('tr')
-      tr.appendChild(tdName)
-      tr.appendChild(tdLanguage)
-      moviesBody.appendChild(tr)
-    })
+      const tr = document.createElement('tr');
+      tr.appendChild(tdName);
+      tr.appendChild(tdLanguage);
+      moviesBody.appendChild(tr);
+    });
   } catch (error) {
-    console.error('Erro ao processar os filmes', error)
+    console.error('Erro ao processar os filmes', error);
   } finally {
-    alert(`Sua solicitação foi concluída!`)
+    alert(`Sua solicitação foi concluída!`);
   }
 }
-const btnMovies = document.querySelector('#btn-movies')
-btnMovies.addEventListener('click', processMovies)
+const btnMovies = document.querySelector('#btn-movies');
+btnMovies.addEventListener('click', processMovies);
 
 //Exercício 2: API de Países
 
 async function searchCountries() {
-  let count = 0
+  let count = 0;
   try {
-    response = await fetch('https://restcountries.com/v3.1/all')
+    response = await fetch('https://restcountries.com/v3.1/all');
     if (!response.ok) {
-      throw new Error(`Erro na requisição ${response.status}`)
+      throw new Error(`Erro na requisição ${response.status}`);
     }
-    contries = await response.json()
-    contries.forEach(country => {
+    contries = await response.json();
+    contries.forEach((country) => {
       if (country.name.common.startsWith('B')) {
-        const li = document.createElement('li')
-        li.textContent = `${country.name.common} - ${country.region}`
-        olPosts.appendChild(li)
-        count++
+        const li = document.createElement('li');
+        li.textContent = `${country.name.common} - ${country.region}`;
+        olPosts.appendChild(li);
+        count++;
       }
-    })
+    });
   } catch (error) {
-    console.error('Erro ao buscar países, tente novamente mais tarde', error)
+    console.error('Erro ao buscar países, tente novamente mais tarde', error);
   } finally {
-    alert(`O total de países encontrados foram: ${count}`)
+    alert(`O total de países encontrados foram: ${count}`);
   }
 }
-const btnCountry = document.querySelector('#btn-country')
-btnCountry.addEventListener('click', searchCountries)
+const btnCountry = document.querySelector('#btn-country');
+btnCountry.addEventListener('click', searchCountries);
 
 //Exercício 3: API de Astronomia
 
-const nasaBody = document.querySelector('#nasa-body')
+const nasaBody = document.querySelector('#nasa-body');
 async function nasaMidia() {
   try {
-    const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+    const response = await fetch(
+      'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY'
+    );
     if (!response.ok) {
-      throw new Error(`Erro na requisição ${response.status}`)
+      throw new Error(`Erro na requisição ${response.status}`);
     }
-    const midias = await response.json()
+    const midias = await response.json();
 
-    const tdTitle = document.createElement('td')
-    tdTitle.textContent = midias.title
+    const tdTitle = document.createElement('td');
+    tdTitle.textContent = midias.title;
 
-    const tdDescription = document.createElement('td')
-    tdDescription.textContent = midias.explanation
+    const tdDescription = document.createElement('td');
+    tdDescription.textContent = midias.explanation;
 
-    const imgUrl = document.createElement('img')
-    imgUrl.setAttribute('src', midias.url)
-    const tdImg = document.createElement('td')
-    tdImg.appendChild(imgUrl)
+    const imgUrl = document.createElement('img');
+    imgUrl.setAttribute('src', midias.url);
+    const tdImg = document.createElement('td');
+    tdImg.appendChild(imgUrl);
 
-    const tr = document.createElement('tr')
-    tr.appendChild(tdTitle)
-    tr.appendChild(tdDescription)
-    tr.appendChild(tdImg)
-    nasaBody.appendChild(tr)
+    const tr = document.createElement('tr');
+    tr.appendChild(tdTitle);
+    tr.appendChild(tdDescription);
+    tr.appendChild(tdImg);
+    nasaBody.appendChild(tr);
   } catch (error) {
-    console.error(`Erro na sua solicitação: ${error}`)
+    console.error(`Erro na sua solicitação: ${error}`);
   } finally {
-    alert(`Requisição concluída, sucesso ou falha`)
+    alert(`Requisição concluída, sucesso ou falha`);
   }
 }
 
-const btnNasa = document.querySelector('#btn-nasa')
-btnNasa.addEventListener('click', nasaMidia)
+const btnNasa = document.querySelector('#btn-nasa');
+btnNasa.addEventListener('click', nasaMidia);

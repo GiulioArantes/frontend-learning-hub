@@ -5,7 +5,11 @@ body {
 
 /* Utilização de flexbox para melhor visualização do menu */
 header {
-  background: linear-gradient(to bottom, rgb(182, 182, 182), rgb(144, 144, 144));
+  background: linear-gradient(
+    to bottom,
+    rgb(182, 182, 182),
+    rgb(144, 144, 144)
+  );
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -53,7 +57,11 @@ main {
 /* o rodapé serve para ser semelhante ao cabeçalho mas o menu deve ser exibido
 em coluna*/
 footer {
-  background: linear-gradient(to bottom, rgb(182, 182, 182), rgb(144, 144, 144));
+  background: linear-gradient(
+    to bottom,
+    rgb(182, 182, 182),
+    rgb(144, 144, 144)
+  );
   display: flex;
   flex-flow: column wrap;
   align-items: center;

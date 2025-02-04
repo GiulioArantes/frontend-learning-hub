@@ -1,8 +1,17 @@
-# Ignorar arquivos gerados/compilados
-node_modules/
-package-lock.json
+# Arquivos gerados
+build/
 dist/
-*.min.js
 
-# Ignorar arquivos de configuração local (se necessário)
-# .env
+# Dependências
+node_modules/
+
+# Arquivos de configuração
+package-lock.json
+yarn.lock
+
+# Arquivos de ambiente
+.env*
+
+# Outros arquivos que não precisam ser formatados
+*.min.js
+*.min.css
