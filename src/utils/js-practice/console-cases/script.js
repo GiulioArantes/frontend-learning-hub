@@ -68,3 +68,71 @@ for (let i = 1; i <= invertedNumbers.length; i++) {
 }
 
 console.log(organize);
+console.log('---');
+
+//Escreva um laço for que percorra cada caractere de uma string e conte quantas vogais ela possui. Exiba o total.
+let word = 'Palavras';
+let count = 0;
+const vowels = 'aeiouAEIOU';
+
+for (let i = 0; i < word.length; i++) {
+  if (vowels.includes(word[i])) {
+    count++;
+  }
+}
+
+console.log(count);
+console.log('---');
+
+//Utilizando um array de números, crie um laço for que multiplique cada elemento por um valor fixo (por exemplo, 2) e armazene os resultados em um novo array. Exiba o novo array.
+const arrayN = [1, 2, 3, 4, 5];
+const arrayM = [];
+for (let i = 0; i < arrayN.length; i++) {
+  arrayM[i] = 2 * arrayN[i];
+}
+
+console.log(arrayM);
+console.log('---');
+//Dado um array de nomes, crie um laço for que verifique se um determinado nome existe no array. Se encontrar, exiba uma mensagem indicando sua posição; caso contrário, informe que o nome não foi encontrado.
+
+const names = ['giulio', 'gabriel', 'lucas', 'grace'];
+let found = false;
+
+for (let i = 0; i < names.length; i++) {
+  targetName = 'jones';
+  if (names[i] === targetName) {
+    console.log(names.indexOf(targetName));
+    found = true;
+  }
+}
+if (!found) console.log('nome não foi encontrado');
+
+const users = [
+  {
+    name: 'Gabriel',
+    age: 25,
+    email: 'gabriel@example.com',
+  },
+  {
+    name: 'Lucas',
+    age: 30,
+    email: 'lucas@example.com',
+  },
+  {
+    name: 'Sandra',
+    age: 17,
+    email: 'sandra@example.com',
+  },
+  {
+    name: 'Marcos',
+    age: 17,
+    email: 'marcos@example.com',
+  },
+];
+legalAge = [];
+
+for (let i = 0; i < users.length; i++) {
+  if (users[i].age >= 18) legalAge.push(users[i]);
+}
+
+console.log(legalAge);
