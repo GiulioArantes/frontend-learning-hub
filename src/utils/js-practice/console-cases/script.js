@@ -50,40 +50,6 @@ switch (day) {
 }
 
 //Loops
-const numbers = [2, 2, 2, 2, 2];
-let soma = 0;
-
-for (let i = 0; i < numbers.length; i++) {
-  soma += numbers[i];
-}
-
-console.log(soma);
-console.log('---');
-
-const invertedNumbers = [5, 4, 3, 2, 1];
-let organize = [];
-
-for (let i = 1; i <= invertedNumbers.length; i++) {
-  organize.push(invertedNumbers[invertedNumbers.length - i]);
-}
-
-console.log(organize);
-console.log('---');
-
-//Escreva um laço for que percorra cada caractere de uma string e conte quantas vogais ela possui. Exiba o total.
-let word = 'Palavras';
-let count = 0;
-const vowels = 'aeiouAEIOU';
-
-for (let i = 0; i < word.length; i++) {
-  if (vowels.includes(word[i])) {
-    count++;
-  }
-}
-
-console.log(count);
-console.log('---');
-
 //Utilizando um array de números, crie um laço for que multiplique cada elemento por um valor fixo (por exemplo, 2) e armazene os resultados em um novo array. Exiba o novo array.
 const arrayN = [1, 2, 3, 4, 5];
 const arrayM = [];
@@ -136,3 +102,76 @@ for (let i = 0; i < users.length; i++) {
 }
 
 console.log(legalAge);
+console.log('---');
+console.log('Agora vamos fazer exercícios de While e Do...While Loops');
+
+let regressive = 10;
+while (regressive > 0) {
+  console.log(regressive);
+  regressive--;
+}
+console.log('fogo');
+console.log('---');
+
+//Utilize um laço while para somar os números de 1 até que a soma atinja ou ultrapasse 100. Exiba o valor final da soma e quantas iterações foram realizadas.
+let total = 1;
+let iterations = 0;
+
+while (total <= 100) {
+  total++;
+  iterations++;
+}
+console.log(
+  'O total é: ',
+  total,
+  '\nO total de interações foram: ',
+  iterations
+);
+console.log('---');
+
+// Com um laço while, comece com um número inicial (por exemplo, 1) e, a cada iteração, multiplique-o por 2 até que o resultado seja maior que 1000. Exiba o número de iterações necessárias e o valor final.
+let initialNumber = 1;
+let totalInteraction = 0;
+
+while (initialNumber < 1000) {
+  initialNumber *= 2;
+  totalInteraction++;
+}
+console.log(
+  'O resultado é: ',
+  initialNumber,
+  '\n o total de interações foram:',
+  totalInteraction
+);
+console.log('---');
+
+let numbers = [1, 2, 3, 4, 5];
+let result = 0;
+for (let number of numbers) {
+  result += number;
+}
+console.log(result);
+console.log('---');
+
+// Crie um array de palavras e utilize o for...of para transformar cada palavra em letras maiúsculas, armazenando-as em um novo array. Exiba o novo array.
+let words = ['Giulio, Gabriel, Lucas, Guilherme, João'];
+let captalLetters = [];
+for (let word of words) {
+  captalLetters = word.toUpperCase();
+}
+console.log(captalLetters);
+
+nums = [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5];
+positiveNums = [];
+negativeNums = [];
+
+for (let num of nums) {
+  num < 0 ? positiveNums.push(num) : negativeNums.push(num);
+}
+console.log(
+  'Os números positivos são: ',
+  positiveNums,
+  '\nOs números negativos são: ',
+  negativeNums
+);
+//revisar código acima para trocar o método de array por outro mais simples
