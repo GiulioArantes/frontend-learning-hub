@@ -161,12 +161,14 @@ for (let word of words) {
 }
 console.log(captalLetters);
 
-nums = [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5];
-positiveNums = [];
-negativeNums = [];
+const nums = [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5];
+let positiveNums = [];
+let negativeNums = [];
+let index = 0;
 
 for (let num of nums) {
-  num < 0 ? positiveNums.push(num) : negativeNums.push(num);
+  num > 0 ? (positiveNums[index] = num) : (negativeNums[index] = num);
+  index++;
 }
 console.log(
   'Os números positivos são: ',
@@ -175,3 +177,103 @@ console.log(
   negativeNums
 );
 //revisar código acima para trocar o método de array por outro mais simples
+
+//Crie um laço for...of que percorra uma string e crie uma nova string contendo somente os caracteres que não sejam vogais. Exiba a string resultante.
+
+const completeWord = 'verde';
+let newWord = '';
+
+for (let consonant of completeWord) {
+  if (
+    consonant !== 'a' &&
+    consonant !== 'e' &&
+    consonant !== 'i' &&
+    consonant !== 'o' &&
+    consonant !== 'u' &&
+    consonant !== 'A' &&
+    consonant !== 'E' &&
+    consonant !== 'I' &&
+    consonant !== 'O' &&
+    consonant !== 'U'
+  ) {
+    newWord += consonant;
+  }
+}
+console.log(newWord);
+console.log('---');
+
+// Dado um array de objetos representando produtos (cada objeto com propriedades como nome e preço), use o for...of para encontrar e exibir os produtos que tenham preço acima de um valor definido.
+
+const products = [
+  {
+    name: 'Pão',
+    price: 1,
+  },
+  {
+    name: 'Leite',
+    price: 4,
+  },
+  {
+    name: 'Arroz',
+    price: 3,
+  },
+  {
+    name: 'Açucar',
+    price: 2,
+  },
+];
+
+for (let product of products) {
+  if (product.price > 2)
+    console.log(`Os produtos com valor acima de R$ 2.00: ${product.name}`);
+}
+console.log('---');
+
+//For...in Loop
+//Crie um objeto que represente um carro com propriedades como marca, modelo, ano e cor. Use um for...in para exibir cada propriedade e seu valor.
+
+const car = { mark: 'Ford', model: 'KA', year: 2020, color: 'Prata' };
+
+for (let key in car) {
+  console.log(`${key}:`, car[key]);
+}
+console.log('---');
+
+//Escreva um laço for...in que percorra um objeto e conte quantas propriedades ele possui. Exiba a contagem final
+const people = {
+  age: 20,
+  city: 'São Paulo',
+  phone: '(11) 9 9999-9999',
+  mail: 'pedro@example.com',
+  name: 'Pedro',
+};
+let count = 0;
+for (let key in people) {
+  if (key) count++;
+}
+console.log(`Este objeto possui ${count} propriedades`);
+console.log('---');
+
+//Dado um objeto com informações de um usuário (nome, email, telefone), utilize for...in para verificar se existe a propriedade endereço. Se não existir, adicione essa propriedade com um valor padrão e exiba o objeto modificado.
+person = {
+  name: 'Lucas',
+  mail: 'lucas@example.com',
+  phone: '(11) 9 9999-9999',
+};
+checker = true;
+for (let key in person) {
+  if (key === 'address') checker = false;
+  break;
+}
+if (checker) person.address = 'São Paulo';
+console.log(person);
+console.log('---');
+
+//Crie um objeto com diversas propriedades (por exemplo, de um produto: nome, categoria, preço, estoque) e utilize for...in para criar um novo objeto contendo apenas as propriedades que você considera essenciais (por exemplo, nome e preço). Exiba o novo objeto.
+goods = { name: 'Palmito', category: 'Alimentos', price: 8, estoque: 10 };
+newGoods = {};
+for (let key in goods) {
+  if (key === 'name' || key === 'price') newGoods.key = goods.key;
+}
+
+console.log(newGoods);
