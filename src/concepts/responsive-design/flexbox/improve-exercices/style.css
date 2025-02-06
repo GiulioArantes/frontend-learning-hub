@@ -1,0 +1,37 @@
+.logo {
+  height: 10vh;
+  width: auto;
+  margin-left: 0.5rem;
+}
+
+#hamburger-btn {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  display: none;
+  gap: 1rem;
+  margin-right: 0.5rem;
+}
+
+ul:active {
+  display: flex;
+}
+
+ul li {
+  list-style: none;
+}
+ul li a {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+}
