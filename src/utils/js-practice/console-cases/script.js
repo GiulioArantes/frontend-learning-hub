@@ -273,7 +273,30 @@ console.log('---');
 goods = { name: 'Palmito', category: 'Alimentos', price: 8, estoque: 10 };
 newGoods = {};
 for (let key in goods) {
-  if (key === 'name' || key === 'price') newGoods.key = goods.key;
+  if (key === 'name' || key === 'price') newGoods[key] = goods[key];
 }
 
 console.log(newGoods);
+console.log('---');
+
+// Dado um objeto que contém outro objeto aninhado (por exemplo, um usuário com um endereço que possui rua, cidade e CEP), utilize for...in para iterar sobre as propriedades do objeto principal e, quando encontrar um objeto aninhado, itere também sobre suas propriedades. Exiba todas as chaves e valores de forma estruturada.
+const man = {
+  name: 'João',
+  age: 21,
+  address: {
+    street: 'mata de babaçus',
+    city: 'São Paulo',
+    CEP: '02111-001',
+  },
+};
+
+for (key in man) {
+  if (key === 'address') {
+    console.log(`${key}:`);
+    for (subKey in man.address) {
+      console.log(`${subKey}: ${man.address[subKey]}`);
+    }
+  } else {
+    console.log(`${key}: ${man[key]}`);
+  }
+}
