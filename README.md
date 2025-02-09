@@ -1,25 +1,138 @@
-# Meu Projeto Didático
+# Frontend Learning Hub 🚀
 
-Este projeto é um site simples criado como parte do meu aprendizado em front-end. Ele inclui uma estrutura básica de HTML, estilos personalizados com CSS e funcionalidades planejadas com JavaScript.
+Repositório dedicado ao aprendizado e prática de desenvolvimento front-end, abrangendo desde fundamentos até conceitos avançados.
 
-## Funcionalidades
+## 🛠 Tech Stack Atual
 
-- [x] Estrutura básica com HTML
-- [x] Estilos personalizados com CSS
-- [ ] Integração de JavaScript (planejado)
+- **Linguagens**:  
+  ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+  ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+  ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 
-## Tecnologias Usadas
+- **Ferramentas**:  
+  ![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=flat&logo=prettier&logoColor=white)
+  ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
 
-- HTML5
-- CSS3
+## 🧠 Caminho de Aprendizado
 
-## Como Visualizar
+### 📚 Fundamentos Essenciais
 
-Acesse o projeto online em: [GitHub Pages](https://giulioarantes.github.io/meu-projeto-didatico/).
+- **HTML**
+  - Estrutura semântica
+  - Formulários e acessibilidade
+- **CSS**
+  - Flexbox e Grid
+  - Animações e transições
+  - Design responsivo
+- **JavaScript**
+  - Manipulação do DOM
+  - Fetch API
+  - Async/Await
 
-## Contato
+### 🚀 Projetos Práticos
 
-Caso queira entrar em contato comigo:
+| Projeto            | Tecnologias        | Status |
+| ------------------ | ------------------ | ------ |
+| E-commerce         | HTML, CSS, JS      | ✅     |
+| Galeria de Animais | CSS Grid, Flexbox  | 🚧     |
+| Portfólio Pessoal  | CSS Avançado       | 📅     |
+| Integração com API | Fetch, Async/Await | ✅     |
 
-- **Email**: giulio.arantes@icloud.com
-- **LinkedIn**: [Giulio Arantes](https://linkedin.com/in/giulio-arantes)
+## 📂 Estrutura do Repositório
+
+```plaintext
+frontend-learning-hub/
+├── public/           # Assets estáticos
+│   ├── images/       # Imagens para projetos
+│   └── favicon.png
+│
+├── src/
+│   ├── concepts/     # Estudos de conceitos
+│   │   ├── animations
+│   │   ├── api-integration
+│   │   └── responsive-design
+│   │
+│   ├── projects/     # Projetos completos
+│   │   ├── e-commerce
+│   │   ├── gallery
+│   │   └── portfolio
+│   │
+│   └── utils/        # Recursos auxiliares
+│       ├── css-advanced
+│       └── js-practice
+│
+├── .prettierrc       # Configuração de formatação
+└── package.json      # Dependências e scripts
+```
+
+### 🔧 Ferramentas de Desenvolvimento
+
+1. Prettier: Formatação automática de código
+
+```bash
+npx prettier --write "src/**/*.{html,css,js}"
+```
+
+2. Git Flow: Padronização de branches e commits
+
+```bash
+./git-flow.sh feat css "Novo sistema de grids"
+```
+
+## 🛠 Próximas Etapas
+
+### Tecnologias a Explorar
+
+![React Logo](https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg)
+![TypeScript Logo](https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg)
+![SASS Logo](https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg)
+
+### Conceitos Avançados
+
+- Performance optimization
+- Testes automatizados (Jest)
+- Web Accessibility (WCAG)
+
+## ⚡ Como Contribuir
+
+1. Faça um fork do repositório
+2. Crie uma branch para sua feature:
+
+```bash
+git checkout -b feat/nova-feature
+```
+
+3. Commit suas mudanças:
+
+```bash
+git commit -m "feat: adiciona nova funcionalidade"
+```
+
+4. Envie um Pull Request!
+
+## 📄 Licença
+
+## Este projeto está licenciado sob a [MIT License](https://opensource.org/licenses/MIT).
+
+---
+
+**Connect with me:**
+[![LinkedIn](https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png)](https://www.linkedin.com/in/giulio-arantes/)
+
+---
+
+### ✨ Principais Melhorias:
+
+1. **Badges Visuais**: Ícones interativos para tecnologias
+2. **Tabela de Progresso**: Visão clara do status dos projetos
+3. **Roadmap Profissional**: Caminho claro de evolução
+4. **Integração com Ferramentas**: Destaque para Prettier e Git Flow
+5. **Chamada para Ação**: Instruções claras para contribuição
+
+### 🎯 Como Usar:
+
+1. Substitua `seu-perfil` no link do LinkedIn
+2. Adicione screenshots dos projetos na pasta `public/images/projects/`
+3. Atualize a seção **Próximas Etapas** conforme evolui
+
+Quer que eu adapte alguma seção específica para seu contexto? 😊
