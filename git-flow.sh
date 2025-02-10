@@ -17,12 +17,12 @@ declare -A EMOJI_MAP=(
 )
 
 # Allowed branch scopes based on the repository structure.
-# For example: "concepts", "projects", "utils", "public", "docs"
+# Por exemplo: "concepts", "projects", "utils", "public", "docs"
 VALID_BRANCH_SCOPES=("concepts" "projects" "utils" "public" "docs")
 
 # Allowed commit scopes.
-# Examples: "animations", "api-integration", "responsive-design", "gallery", "e-commerce", "portfolio", "js-practice", "css-advanced", "html", "docs"
-VALID_COMMIT_SCOPES=("animations" "api-integration" "responsive-design" "gallery" "e-commerce" "portfolio" "js-practice" "css-advanced" "html" "docs")
+# Ex.: "animations", "api-integration", "responsive-design", "gallery", "e-commerce", "portfolio", "js-practice", "css-advanced", "html", "docs"
+VALID_COMMIT_SCOPES=("animations" "api-integration" "responsive-design" "gallery" "e-commerce" "portfolio" "js-practice" "css-advanced" "html" "docs" "map" "reduce" "filter")
 
 DEFAULT_PR_BASE="main"        # Base branch for PRs
 AUTO_FORMAT=true              # Execute Prettier before commits
@@ -30,12 +30,12 @@ AUTO_FORMAT=true              # Execute Prettier before commits
 # ---------------------------------------------------------------
 # Parameter Validation
 # ---------------------------------------------------------------
-# Expected parameters:
+# Parâmetros esperados:
 # $1: type (feat, fix, docs, style, refactor, test, chore, revert)
-# $2: branch scope (e.g., concepts, projects, utils, public, docs)
-# $3: commit scope (can be multiple, separated by commas)
-# $4: message (short description, in imperative lowercase)
-# $5: (Optional) Issue number
+# $2: branch scope (ex.: concepts, projects, utils, public, docs ou um subescopo, ex.: concepts/array-methods)
+# $3: commit scope (pode ser múltiplo, separado por vírgula)
+# $4: message (descrição curta, em formato imperativo e minúsculo)
+# $5: (Opcional) Issue number
 
 if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ] || [ -z "$4" ]; then
     echo "Usage: $0 <type> <branch-scope> <commit-scope> \"<message>\" [issue-number]"
@@ -49,10 +49,10 @@ if [[ -z "${EMOJI_MAP[$1]}" ]]; then
     exit 1
 fi
 
-# Validate branch scope
+# Validate branch scope - agora permite subescopos (ex.: concepts/array-methods)
 found_branch=false
 for valid in "${VALID_BRANCH_SCOPES[@]}"; do
-    if [ "$2" == "$valid" ]; then
+    if [[ "$2" == $valid* ]]; then
         found_branch=true
         break
     fi
@@ -62,7 +62,7 @@ if [ "$found_branch" = false ]; then
     exit 1
 fi
 
-# Validate commit scope (allowing multiple scopes separated by commas)
+# Validate commit scope (permitindo múltiplos scopes separados por vírgulas)
 IFS=',' read -ra commit_scopes <<< "$3"
 for scope in "${commit_scopes[@]}"; do
     scope_trimmed=$(echo "$scope" | xargs)
@@ -74,7 +74,7 @@ for scope in "${commit_scopes[@]}"; do
         fi
     done
     if [ "$valid_scope" = false ]; then
-        # Allow commit scopes that start with "project/" (case-insensitive)
+        # Permite commit scopes que começam com "project/" (case-insensitive)
         lowercase=$(echo "$scope_trimmed" | tr '[:upper:]' '[:lower:]')
         if [[ $lowercase == project/* ]]; then
             valid_scope=true
@@ -89,10 +89,10 @@ done
 # ---------------------------------------------------------------
 # Dynamic Configuration
 # ---------------------------------------------------------------
-# Branch name will be the branch scope (e.g., "projects")
+# O branch name será o branch scope (ex.: "projects" ou "concepts/array-methods")
 BRANCH_NAME="$2"
 EMOJI=${EMOJI_MAP[$1]}
-# Compose the commit message with the provided commit scopes and message.
+# Monta a mensagem de commit com os commit scopes e a mensagem fornecida.
 COMMIT_MSG="$1($3): $EMOJI $4"
 PR_TITLE="$COMMIT_MSG"
 PR_BODY_FILE=".github/pull_request_template.md"
@@ -135,7 +135,7 @@ else
     git push -u origin "$BRANCH_NAME"
 fi
 
-# Create the pull request via GitHub CLI if the branch is new.
+# Cria o pull request via GitHub CLI se o branch for novo.
 if ! branch_exists; then
     if [ -f "$PR_BODY_FILE" ]; then
         PR_BODY=$(cat "$PR_BODY_FILE")
