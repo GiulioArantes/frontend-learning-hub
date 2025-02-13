@@ -1,0 +1,3 @@
+eslint.config.mjs
+stylelint.config.js
+.github/workflows/*
