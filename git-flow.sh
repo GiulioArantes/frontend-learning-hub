@@ -22,7 +22,7 @@ VALID_BRANCH_SCOPES=("concepts" "projects" "utils" "public" "docs")
 
 # Allowed commit scopes.
 # Ex.: "animations", "api-integration", "responsive-design", "gallery", "e-commerce", "portfolio", "js-practice", "css-advanced", "html", "docs"
-VALID_COMMIT_SCOPES=("animations" "api-integration" "responsive-design" "gallery" "e-commerce" "portfolio" "js-practice" "css-advanced" "html" "docs" "map" "reduce" "filter" "license" "readme" "flexbox")
+VALID_COMMIT_SCOPES=("animations" "api-integration" "responsive-design" "gallery" "e-commerce" "portfolio" "js-practice" "css-advanced" "html" "docs" "map" "reduce" "filter" "license" "readme" "flexbox" "array-methods")
 
 DEFAULT_PR_BASE="main"        # Base branch for PRs
 AUTO_FORMAT=true              # Execute Prettier before commits

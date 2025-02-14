@@ -62,7 +62,6 @@ parallel();
 //1. Consumir uma API de Posts com Async/Await:
 //Faça uma requisição para a API https://jsonplaceholder.typicode.com/posts que retorna uma lista de posts.
 //Use async/await para buscar os posts e exibir o corpo do post.
-
 const olPosts = document.querySelector('ol');
 const btnPosts = document.querySelector('#btn-posts');
 
@@ -98,6 +97,7 @@ btnEmails.addEventListener('click', processComments);
 //API de Filmes
 
 const moviesBody = document.querySelector('#movies-body');
+const modalMovies = document.querySelector('#modal-movies');
 async function processMovies() {
   try {
     const response = await fetch('https://api.tvmaze.com/search/shows?q=star');
@@ -113,9 +113,12 @@ async function processMovies() {
       tdLanguage.textContent = movie.show.language;
 
       const tr = document.createElement('tr');
-      tr.appendChild(tdName);
-      tr.appendChild(tdLanguage);
+      tr.append(tdName, tdLanguage);
       moviesBody.appendChild(tr);
+    });
+    modalMovies.style.display = 'flex';
+    document.querySelector('.table-modal').scrollIntoView({
+      behavior: 'smooth',
     });
   } catch (error) {
     console.error('Erro ao processar os filmes', error);
@@ -125,6 +128,12 @@ async function processMovies() {
 }
 const btnMovies = document.querySelector('#btn-movies');
 btnMovies.addEventListener('click', processMovies);
+
+modalMovies.addEventListener('click', (e) => {
+  if (e.target === modalMovies) {
+    modalMovies.style.display = 'none';
+  }
+});
 
 //Exercício 2: API de Países
 
@@ -191,3 +200,73 @@ async function nasaMidia() {
 
 const btnNasa = document.querySelector('#btn-nasa');
 btnNasa.addEventListener('click', nasaMidia);
+
+//Function: hidden or show container
+const infoContainer = document.querySelector('.info-container');
+function toggleContainer(containerId) {
+  const container = document.getElementById(containerId);
+  if (container) {
+    document.querySelectorAll('.item').forEach((item) => {
+      if (item.id !== containerId) {
+        item.classList.add('hidden');
+      }
+    });
+    container.classList.toggle('hidden');
+  }
+}
+
+//Event: hidden or show container
+const sidebar = document.querySelector('#sidebar');
+sidebar.addEventListener('click', (event) => {
+  const target = event.target.closest('.section-btn');
+  const targetImg = target.querySelector('.arrow-img');
+
+  console.log(targetImg);
+  if (targetImg.src.endsWith('/public/images/projects/arrow-left.svg')) {
+    targetImg.src = '/public/images/projects/arrow-rigth.svg';
+  } else {
+    targetImg.src = '/public/images/projects/arrow-left.svg';
+  }
+
+  if (target) {
+    const targetId = target.getAttribute('id');
+    let containerId;
+
+    switch (targetId) {
+      case 'error-section':
+        containerId = 'error-manipulation';
+        break;
+      case 'posts-section':
+        containerId = 'container-posts';
+        break;
+      case 'email-section':
+        containerId = 'container-emails';
+        break;
+      case 'country-section':
+        containerId = 'container-country';
+        break;
+      case 'movies-section':
+        containerId = 'movies-container';
+        break;
+      case 'nasa-section':
+        containerId = 'nasa-container';
+        break;
+      default:
+        return;
+    }
+    toggleContainer(containerId);
+    infoContainer.classList.toggle('hidden');
+  }
+});
+
+const modal = document.querySelector('.modal');
+const listResult = document.querySelector('#list-result');
+const body = document.querySelector('body');
+body.addEventListener('click', (event) => {
+  const target = event.target.closest('.btn-action');
+  if (target) modal.style.display = 'flex';
+});
+
+modal.addEventListener('click', (e) => {
+  e.target.style.display = 'none';
+});
