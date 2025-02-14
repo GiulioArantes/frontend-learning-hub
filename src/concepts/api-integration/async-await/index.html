@@ -9,31 +9,180 @@
   </head>
 
   <body>
-    <main>
+    <header>
       <h1>Async/Await</h1>
       <h2>Aqui estão os diversos exercícios que envolvem Async/Await</h2>
-      <div id="error-manipulation">
+    </header>
+    <main>
+      <section id="sidebar">
+        <button id="error-section" class="section-btn">
+          <div>números</div>
+          <div class="div-img">
+            <img
+              src="/public/images/projects/arrow-left.svg"
+              alt=""
+              class="arrow-img"
+            />
+          </div>
+        </button>
+        <button id="posts-section" class="section-btn">
+          <div>posts</div>
+          <div class="div-img">
+            <img
+              src="/public/images/projects/arrow-left.svg"
+              alt=""
+              class="arrow-img"
+            />
+          </div>
+        </button>
+        <button id="email-section" class="section-btn">
+          <div>e-mail</div>
+          <div class="div-img">
+            <img
+              src="/public/images/projects/arrow-left.svg"
+              alt=""
+              class="arrow-img"
+            />
+          </div>
+        </button>
+        <button id="country-section" class="section-btn">
+          <div>países</div>
+          <div class="div-img">
+            <img
+              src="/public/images/projects/arrow-left.svg"
+              alt=""
+              class="arrow-img"
+            />
+          </div>
+        </button>
+        <button id="nasa-section" class="section-btn">
+          <div>nasa</div>
+          <div class="div-img">
+            <img
+              src="/public/images/projects/arrow-left.svg"
+              alt=""
+              class="arrow-img"
+            />
+          </div>
+        </button>
+        <button id="movies-section" class="section-btn">
+          <div>filmes</div>
+          <div class="div-img">
+            <img
+              src="/public/images/projects/arrow-left.svg"
+              alt=""
+              class="arrow-img"
+            />
+          </div>
+        </button>
+      </section>
+      <div class="info-container">
+        <h3>🚀 Bem-vindo ao Laboratório de Async/Await!</h3>
+        <p>
+          Aqui você pode explorar diferentes exemplos práticos de operações assíncronas. 
+          Use os botões à esquerda para testar:
+          <ul>
+            <li>🔢 Simulação de erros e validações</li>
+            <li>📮 Consumo de APIs reais (Posts, E-mails, Filmes)</li>
+            <li>🌍 Dados geográficos em tempo real</li>
+            <li>🛰️ Conteúdo espacial da NASA</li>
+          </ul>
+          <strong>Dica:</strong> Cada seção demonstra um caso de uso diferente do Async/Await - 
+          clique nos botões laterais para começar e verifique o console para detalhes técnicos!
+        </p>
+      </div>
+      <div id="error-manipulation" class="item hidden container-style">
+      <div>
+        <h3>🔧 Simulação de Erros</h3>
+    <p>Esta seção demonstra o tratamento de erros com <strong>try/catch</strong>:
+    <ul>
+      <li>Validação de entrada numérica em tempo real</li>
+      <li>Rejeição controlada de Promises</li>
+      <li>Feedback visual para o usuário</li>
+    </ul>
+    <strong>Tecnologias usadas:</strong> Event listeners, DOM manipulation
         <label for="possible-error">Não digite números acima de 10!</label>
         <input type="number" name="possible-error" id="possible-error" />
-        <button>Enviar</button>
+        <button class="btn-action">Enviar</button>
       </div>
-      <button id="btn-posts">Buscar posts</button>
-      <button id="btn-emails">Buscar email</button>
-      <button id="btn-country">Buscar países</button>
-      <ol></ol>
+    </div>
+      <div class="container-style item hidden" id="container-posts">
       <div>
-        <button id="btn-movies">Buscar Filmes</button>
-        <table>
-          <thead>
-            <th>Nome</th>
-            <th>Linguagem</th>
-          </thead>
-          <tbody id="movies-body"></tbody>
-        </table>
+        <h3>📚 Consumo de API de Posts</h3>
+    <p>Implementação típica de fetch API:
+    <ul>
+      <li>Requisição GET para JSONPlaceholder</li>
+      <li>Renderização assíncrona de resultados</li>
+      <li>Manipulação de lista dinâmica</li>
+    </ul>
+    <strong>Endpoint:</strong> https://jsonplaceholder.typicode.com/posts
+      <button id="btn-posts" class="btn-action">Buscar posts</button>
+    </div>
+  </div>
+    <div class="container-style item hidden" id="container-emails">
+    <div>  
+      <h3>📫 Filtragem de Dados Assíncrona</h3>
+    <p>Demonstra:
+    <ul>
+      <li>Processamento paralelo de dados</li>
+      <li>Filtragem por padrões regex</li>
+      <li>Manipulação de grandes conjuntos</li>
+    </ul>
+    <strong>Dataset:</strong> 500+ comentários
+    <button id="btn-emails" class="btn-action">Buscar email</button>
+  </div>
+</div>
+  <div class="container-style item hidden" id="container-country">
+  <div>  
+    <h3>🌍 API de Países</h3>
+    <p>Integração com REST Countries:
+    <ul>
+      <li>Filtragem por prefixo geográfico</li>
+      <li>Cache de resultados</li>
+      <li>Tratamento de erros de rede</li>
+    </ul>
+    <strong>Recurso:</strong> /v3.1/all
+    <button id="btn-country" class="btn-action">Buscar países</button>
+  </div>  
+</div>
+  <div class="modal">    
+  <ol id="list-result"></ol>
+  </div>    
+  <div class="container-style item hidden" id="movies-container">
+      <div class="align-div">
+        <h3>🎬 Catálogo de Filmes</h3>
+    <p>Implementação de tabela dinâmica:
+    <ul>
+      <li>Paginação implícita</li>
+      <li>Ordenação client-side</li>
+      <li>Gestão de estado assíncrono</li>
+    </ul>
+    <strong>Fonte:</strong> TVMaze API
+        <button id="btn-movies" class="btn-action">Buscar Filmes</button>
+          <div class="modal" id="modal-movies">
+            <div class="table-modal">
+            <table>
+              <thead>
+                <th>Nome</th>
+                <th>Linguagem</th>
+              </thead>
+              <tbody id="movies-body"></tbody>
+            </table>
+          </div>
       </div>
-
-      <div>
-        <button id="btn-nasa">Atualizações NASA</button>
+      </div>
+    </div>
+      <div class="container-style item hidden" id="nasa-container">
+      <div class="align-div">
+        <h3>🛰️ Dados da NASA</h3>
+    <p>Exemplo de API com autenticação:
+    <ul>
+      <li>Requisição de mídia astronômica</li>
+      <li>Renderização condicional</li>
+      <li>Manipulação de diferentes formatos</li>
+    </ul>
+    <strong>API:</strong> APOD (Astronomy Picture of the Day)
+        <button id="btn-nasa" class="btn-action">Atualizações NASA</button>
         <table>
           <thead>
             <th>Título</th>
@@ -43,7 +192,9 @@
           <tbody id="nasa-body"></tbody>
         </table>
       </div>
+    </div>
     </main>
+    <footer>Direitos reservados &#x20AC;</footer>
   </body>
 
   <script src="script.js"></script>
