@@ -145,7 +145,7 @@
     <button id="btn-country" class="btn-action">Buscar países</button>
   </div>  
 </div>
-  <div class="modal">    
+  <div class="modal" data-target="list">    
   <ol id="list-result"></ol>
   </div>    
   <div class="container-style item hidden" id="movies-container">
@@ -159,7 +159,7 @@
     </ul>
     <strong>Fonte:</strong> TVMaze API
         <button id="btn-movies" class="btn-action">Buscar Filmes</button>
-          <div class="modal" id="modal-movies">
+          <div class="modal" id="modal-movies" data-target="movie">
             <div class="table-modal">
             <table>
               <thead>
@@ -183,6 +183,8 @@
     </ul>
     <strong>API:</strong> APOD (Astronomy Picture of the Day)
         <button id="btn-nasa" class="btn-action">Atualizações NASA</button>
+        <div class="modal" id="modal-nasa" data-target="nasa">
+          <div class="table-modal">
         <table>
           <thead>
             <th>Título</th>
@@ -191,6 +193,8 @@
           </thead>
           <tbody id="nasa-body"></tbody>
         </table>
+      </div>
+        </div>
       </div>
     </div>
     </main>

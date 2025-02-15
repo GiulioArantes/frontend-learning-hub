@@ -1,118 +1,133 @@
 # Frontend Learning Hub 🚀
 
-Repositório dedicado ao aprendizado e prática de desenvolvimento front-end, abrangendo desde fundamentos até conceitos avançados.
+Repository dedicated to learning and practicing front-end development, covering everything from fundamentals to advanced concepts.
 
-## 🛠 Tech Stack Atual
+## 🛠 Current Tech Stack
 
 - **Linguagens**:  
   ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
   ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
   ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 
-- **Ferramentas**:  
+- **Tools**:  
   ![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=flat&logo=prettier&logoColor=white)
   ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
 
-## 🧠 Caminho de Aprendizado
+## 🧠 Learning Path
 
-### 📚 Fundamentos Essenciais
+### 📚 Essential Fundamentals
 
 - **HTML**
-  - Estrutura semântica
-  - Formulários e acessibilidade
+  - Semantic structure
+  - Forms and accessibility
 - **CSS**
   - Flexbox e Grid
-  - Animações e transições
-  - Design responsivo
+  - Animations and transitions
+  - Responsive design
 - **JavaScript**
-  - Manipulação do DOM
+  - DOM manipulation
   - Fetch API
   - Async/Await
 
-### 🚀 Projetos Práticos
+### 🚀 Practical Projects
 
-| Projeto            | Tecnologias        | Status |
+| Project            | Technologies       | Status |
 | ------------------ | ------------------ | ------ |
-| E-commerce         | HTML, CSS, JS      | ✅     |
-| Galeria de Animais | CSS Grid, Flexbox  | 🚧     |
-| Portfólio Pessoal  | CSS Avançado       | 📅     |
-| Integração com API | Fetch, Async/Await | ✅     |
+| Animal Gallery     | CSS Grid, Flexbox  | 🚧     |
+| Personal Portfolio | Advanced CSS       | 📅     |
+| API Integration    | Fetch, Async/Await | ✅     |
 
-## 📂 Estrutura do Repositório
+## 📂 Repository Structure
+
+**Essential Concepts**
+
+- [Animations](https://github.com/GiulioArantes/meu-projeto-didatico/tree/main/src/concepts/animations)
+- [DOM Manipulation](https://github.com/GiulioArantes/meu-projeto-didatico/tree/main/src/concepts/dom-manipulation)
+- [API Integration](https://github.com/GiulioArantes/meu-projeto-didatico/tree/main/src/concepts/api-integration)
+- [Array Methods](https://github.com/GiulioArantes/meu-projeto-didatico/tree/main/src/concepts/array-methods)
+- [Responsive Design](https://github.com/GiulioArantes/meu-projeto-didatico/tree/main/src/concepts/responsive-design)
+- [Transitions](https://github.com/GiulioArantes/meu-projeto-didatico/tree/main/src/concepts/transition)
+
+**Auxiliary Tools**
+
+- [Advanced CSS](https://github.com/GiulioArantes/meu-projeto-didatico/tree/main/src/utils/css-advanced)
+- [JavaScript Practice](https://github.com/GiulioArantes/meu-projeto-didatico/tree/main/src/utils/js-practice)
+
+## 📂 Repository Structure
 
 ```plaintext
 frontend-learning-hub/
-├── public/           # Assets estáticos
-│   ├── images/       # Imagens para projetos
+├── public/           # Static assets
+│   ├── images/       # Images for projects
 │   └── favicon.png
 │
 ├── src/
-│   ├── concepts/     # Estudos de conceitos
+│   ├── concepts/     # Concept studies
 │   │   ├── animations
 │   │   ├── api-integration
 │   │   └── responsive-design
 │   │
-│   ├── projects/     # Projetos completos
-│   │   ├── e-commerce
-│   │   ├── gallery
-│   │   └── portfolio
+│   ├── projects/     # Complete projects
+│   │   ├── portfolio
+│   │   └── gallery
 │   │
-│   └── utils/        # Recursos auxiliares
+│   │
+│   └── utils/        # Auxiliary features
 │       ├── css-advanced
 │       └── js-practice
 │
-├── .prettierrc       # Configuração de formatação
-└── package.json      # Dependências e scripts
+├── .prettierrc       # Formatting Setting
+└── package.json      # Dependencies and scripts
 ```
 
-### 🔧 Ferramentas de Desenvolvimento
+### 🔧 Development Tools
 
-1. Prettier: Formatação automática de código
+1. Prettier: Automatic code formatting
 
 ```bash
 npx prettier --write "src/**/*.{html,css,js}"
 ```
 
-2. Git Flow: Padronização de branches e commits
+2. Git Flow: Standardizing branches and commits
 
 ```bash
-./git-flow.sh feat css "Novo sistema de grids"
+./git-flow.sh feat css "New grid system"
 ```
 
-## 🛠 Próximas Etapas
+## 🛠 Next Steps
 
-### Tecnologias a Explorar
+### Technologies to Explore
 
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
 ![Sass](https://img.shields.io/badge/Sass-CC6699?style=flat&logo=sass&logoColor=white)
 
-### Conceitos Avançados
+### Advanced Concepts
 
 - Performance optimization
-- Testes automatizados (Jest)
+- Automated testing (Jest)
 - Web Accessibility (WCAG)
 
-## ⚡ Como Contribuir
+## ⚡ How to Contribute
 
-1. Faça um fork do repositório
-2. Crie uma branch para sua feature:
-
-```bash
-git checkout -b feat/nova-feature
-```
-
-3. Commit suas mudanças:
+1. Fork the repository
+2. Create a branch for your feature:
 
 ```bash
-git commit -m "feat: adiciona nova funcionalidade"
+git checkout -b feat/new-feature
 ```
 
-4. Envie um Pull Request!
+3. Commit your changes:
 
-## 📄 Licença
+```bash
+git commit -m "feat: add new functionality"
+```
 
-## Este projeto está licenciado sob a [MIT License](https://opensource.org/licenses/MIT).
+4. Submit a Pull Request!
+
+## 📄 License
+
+## This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 ---
 
@@ -120,19 +135,3 @@ git commit -m "feat: adiciona nova funcionalidade"
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/giulio-arantes/)
 
 ---
-
-### ✨ Principais Melhorias:
-
-1. **Badges Visuais**: Ícones interativos para tecnologias
-2. **Tabela de Progresso**: Visão clara do status dos projetos
-3. **Roadmap Profissional**: Caminho claro de evolução
-4. **Integração com Ferramentas**: Destaque para Prettier e Git Flow
-5. **Chamada para Ação**: Instruções claras para contribuição
-
-### 🎯 Como Usar:
-
-1. Substitua `seu-perfil` no link do LinkedIn
-2. Adicione screenshots dos projetos na pasta `public/images/projects/`
-3. Atualize a seção **Próximas Etapas** conforme evolui
-
-Quer que eu adapte alguma seção específica para seu contexto? 😊

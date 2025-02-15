@@ -64,6 +64,7 @@ parallel();
 //Use async/await para buscar os posts e exibir o corpo do post.
 const olPosts = document.querySelector('ol');
 const btnPosts = document.querySelector('#btn-posts');
+const modalList = document.querySelector('.modal');
 
 async function processPosts() {
   const response = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -73,6 +74,7 @@ async function processPosts() {
     li.textContent = data.body;
     olPosts.appendChild(li);
   });
+  modalList.style.display = 'flex';
 }
 btnPosts.addEventListener('click', processPosts);
 
@@ -90,9 +92,38 @@ async function processComments() {
       olPosts.appendChild(li);
     }
   });
+  modalList.style.display = 'flex';
 }
 const btnEmails = document.querySelector('#btn-emails');
 btnEmails.addEventListener('click', processComments);
+
+//Exercício 2: API de Países
+
+async function searchCountries() {
+  let count = 0;
+  try {
+    response = await fetch('https://restcountries.com/v3.1/all');
+    if (!response.ok) {
+      throw new Error(`Erro na requisição ${response.status}`);
+    }
+    contries = await response.json();
+    contries.forEach((country) => {
+      if (country.name.common.startsWith('B')) {
+        const li = document.createElement('li');
+        li.textContent = `${country.name.common} - ${country.region}`;
+        olPosts.appendChild(li);
+        count++;
+      }
+      modalList.style.display = 'flex';
+    });
+  } catch (error) {
+    console.error('Erro ao buscar países, tente novamente mais tarde', error);
+  } finally {
+    alert(`O total de países encontrados foram: ${count}`);
+  }
+}
+const btnCountry = document.querySelector('#btn-country');
+btnCountry.addEventListener('click', searchCountries);
 
 //API de Filmes
 
@@ -129,41 +160,9 @@ async function processMovies() {
 const btnMovies = document.querySelector('#btn-movies');
 btnMovies.addEventListener('click', processMovies);
 
-modalMovies.addEventListener('click', (e) => {
-  if (e.target === modalMovies) {
-    modalMovies.style.display = 'none';
-  }
-});
-
-//Exercício 2: API de Países
-
-async function searchCountries() {
-  let count = 0;
-  try {
-    response = await fetch('https://restcountries.com/v3.1/all');
-    if (!response.ok) {
-      throw new Error(`Erro na requisição ${response.status}`);
-    }
-    contries = await response.json();
-    contries.forEach((country) => {
-      if (country.name.common.startsWith('B')) {
-        const li = document.createElement('li');
-        li.textContent = `${country.name.common} - ${country.region}`;
-        olPosts.appendChild(li);
-        count++;
-      }
-    });
-  } catch (error) {
-    console.error('Erro ao buscar países, tente novamente mais tarde', error);
-  } finally {
-    alert(`O total de países encontrados foram: ${count}`);
-  }
-}
-const btnCountry = document.querySelector('#btn-country');
-btnCountry.addEventListener('click', searchCountries);
-
 //Exercício 3: API de Astronomia
 
+const modalNasa = document.querySelector('#modal-nasa');
 const nasaBody = document.querySelector('#nasa-body');
 async function nasaMidia() {
   try {
@@ -191,6 +190,11 @@ async function nasaMidia() {
     tr.appendChild(tdDescription);
     tr.appendChild(tdImg);
     nasaBody.appendChild(tr);
+
+    modalNasa.style.display = 'flex';
+    document.querySelector('.table-modal').scrollIntoView({
+      behavior: 'smooth',
+    });
   } catch (error) {
     console.error(`Erro na sua solicitação: ${error}`);
   } finally {
@@ -259,14 +263,12 @@ sidebar.addEventListener('click', (event) => {
   }
 });
 
-const modal = document.querySelector('.modal');
-const listResult = document.querySelector('#list-result');
-const body = document.querySelector('body');
-body.addEventListener('click', (event) => {
-  const target = event.target.closest('.btn-action');
-  if (target) modal.style.display = 'flex';
-});
-
-modal.addEventListener('click', (e) => {
-  e.target.style.display = 'none';
+//Event: close modal
+const modals = document.querySelectorAll('.modal');
+modals.forEach((modal) => {
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
 });
