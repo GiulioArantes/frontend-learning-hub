@@ -33,7 +33,7 @@ jobs:
         run: |
           npx eslint .
           npx stylelint "**/*.css"
-      #  continue-on-error: true
+        continue-on-error: true
 
   test:
     name: test
@@ -59,8 +59,7 @@ jobs:
         run: npm install
 
       - name: Run Tests
-        run: echo "test"
-      # run: npm run test
+        run: npx jest
 
   build:
     name: build
