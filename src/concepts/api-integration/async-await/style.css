@@ -115,6 +115,7 @@ img {
   display: flex;
 }
 
+.edit-post,
 .table-modal,
 #list-result {
   display: flex;
@@ -123,6 +124,13 @@ img {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow-y: auto;
+}
+
+.edit-post {
+  flex-direction: column;
+}
+#edit-post {
+  margin: 1rem 0;
 }
 
 #list-result {

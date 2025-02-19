@@ -59,32 +59,100 @@ async function parallel() {
 
 parallel();
 
-//1. Consumir uma API de Posts com Async/Await:
-//Faça uma requisição para a API https://jsonplaceholder.typicode.com/posts que retorna uma lista de posts.
-//Use async/await para buscar os posts e exibir o corpo do post.
+// post API
 const olPosts = document.querySelector('ol');
-const btnPosts = document.querySelector('#btn-posts');
-const modalList = document.querySelector('.modal');
+const modalList = document.querySelector('#modal-list');
 
-async function processPosts() {
-  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-  const datas = await response.json();
-  datas.forEach((data) => {
+// API call
+let posts = [];
+async function fetchPosts() {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    if (!response.ok) {
+      throw new Error(`Erro ao buscar dados: ${response.status}`);
+    }
+    posts = await response.json();
+  } catch (error) {
+    console.error('Falha ao carregar os dados:', error);
+  }
+}
+fetchPosts();
+
+// function: posts by user (id)
+const inputUserId = document.querySelector('#user-id');
+function specificPosts() {
+  olPosts.innerHTML = '';
+  const filteredPosts = inputUserId.value;
+  const forUser = posts.filter((post) => post.userId === Number(filteredPosts));
+  if (forUser.length === 0) {
+    alert(`Esse usuário não existe`);
+    inputUserId.value = 1;
+  } else {
+    forUser.forEach((post) => {
+      const li = document.createElement('li');
+      li.textContent = post.body;
+      olPosts.appendChild(li);
+    });
+    modalList.style.display = 'flex';
+  }
+}
+
+// function: all posts
+function showAllPosts() {
+  olPosts.innerHTML = '';
+  posts.forEach((post) => {
     const li = document.createElement('li');
-    li.textContent = data.body;
+    li.textContent = post.body;
     olPosts.appendChild(li);
   });
   modalList.style.display = 'flex';
 }
-btnPosts.addEventListener('click', processPosts);
 
-//2. Consumir uma API de Comentários com Async/Await:
-//Faça uma requisição para a API https://jsonplaceholder.typicode.com/comments que retorna uma lista de comentários.
-//Use async/await para buscar os comentários e exibir os comentários com email contendo o domínio "gmail.com".
+document.querySelector('#user-id-btn').addEventListener('click', specificPosts);
+document.querySelector('#btn-posts').addEventListener('click', showAllPosts);
 
-async function processComments() {
-  const response = await fetch('https://jsonplaceholder.typicode.com/comments');
-  const comments = await response.json();
+const postId = document.querySelector('#post-id');
+const modalPost = document.querySelector('#modal-post');
+const textarea = document.querySelector('#edit-post');
+
+//function: edit posts
+function editPosts() {
+  const selectedPost = posts.find((post) => post.id === Number(postId.value));
+  if (selectedPost) {
+    modalPost.style.display = 'flex';
+    textarea.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        selectedPost.body = textarea.value;
+        modalPost.style.display = 'none';
+      }
+    });
+  }
+}
+
+document.querySelector('#post-id-btn').addEventListener('click', editPosts);
+//comment API
+
+// API call
+let comments = [];
+async function fetchComments() {
+  try {
+    const response = await fetch(
+      'https://jsonplaceholder.typicode.com/comments'
+    );
+    if (!response.ok) {
+      throw new Error(`Erro ao buscar os dados: ${response.status}`);
+    }
+    comments = await response.json();
+    byDomain();
+  } catch (error) {
+    console.error(`Falha ao carregar os dados:`, error);
+  }
+}
+fetchComments();
+
+// function: all mails
+function allMails() {
+  olPosts.innerHTML = '';
   comments.forEach((comment) => {
     if (comment.email.includes('.com')) {
       const li = document.createElement('li');
@@ -94,11 +162,19 @@ async function processComments() {
   });
   modalList.style.display = 'flex';
 }
-const btnEmails = document.querySelector('#btn-emails');
-btnEmails.addEventListener('click', processComments);
 
-//Exercício 2: API de Países
+// function: mails by domain
+function byDomain() {
+  const quantity = comments.reduce((acc, comment) => {
+    acc[comment.email] = (acc[comment.email] || 0) + 1;
+    return acc;
+  }, {});
+  console.log(quantity);
+}
 
+document.querySelector('#btn-emails').addEventListener('click', allMails);
+
+//country API
 async function searchCountries() {
   let count = 0;
   try {
@@ -125,40 +201,49 @@ async function searchCountries() {
 const btnCountry = document.querySelector('#btn-country');
 btnCountry.addEventListener('click', searchCountries);
 
-//API de Filmes
-
-const moviesBody = document.querySelector('#movies-body');
-const modalMovies = document.querySelector('#modal-movies');
-async function processMovies() {
+//movies API
+// API call
+let movies = [];
+async function fetchMovies() {
   try {
     const response = await fetch('https://api.tvmaze.com/search/shows?q=star');
     if (!response.ok) {
       throw new Error(`Erro na requisição ${response.status}`);
     }
-    const movies = await response.json();
-    movies.forEach((movie) => {
-      const tdName = document.createElement('td');
-      tdName.textContent = movie.show.name;
-
-      const tdLanguage = document.createElement('td');
-      tdLanguage.textContent = movie.show.language;
-
-      const tr = document.createElement('tr');
-      tr.append(tdName, tdLanguage);
-      moviesBody.appendChild(tr);
-    });
-    modalMovies.style.display = 'flex';
-    document.querySelector('.table-modal').scrollIntoView({
-      behavior: 'smooth',
-    });
+    movies = await response.json();
   } catch (error) {
     console.error('Erro ao processar os filmes', error);
-  } finally {
-    alert(`Sua solicitação foi concluída!`);
   }
 }
-const btnMovies = document.querySelector('#btn-movies');
-btnMovies.addEventListener('click', processMovies);
+fetchMovies();
+
+// function: show all movies
+function showMovies() {
+  const moviesBody = document.querySelector('#movies-body');
+  moviesBody.innerHTML = '';
+
+  const filteredMovies = movies.map((movie) => ({
+    name: movie.show.name,
+    language: movie.show.language,
+  }));
+
+  filteredMovies.forEach((movie) => {
+    const tdName = document.createElement('td');
+    tdName.textContent = movie.name;
+
+    const tdLanguage = document.createElement('td');
+    tdLanguage.textContent = movie.language;
+
+    const tr = document.createElement('tr');
+    tr.append(tdName, tdLanguage);
+    moviesBody.appendChild(tr);
+  });
+  document.querySelector('#modal-movies').style.display = 'flex';
+  document.querySelector('.table-modal').scrollIntoView({
+    behavior: 'smooth',
+  });
+}
+document.querySelector('#btn-movies').addEventListener('click', showMovies);
 
 //Exercício 3: API de Astronomia
 

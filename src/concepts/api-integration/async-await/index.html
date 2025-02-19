@@ -116,7 +116,21 @@
       <li>Manipulação de lista dinâmica</li>
     </ul>
     <strong>Endpoint:</strong> https://jsonplaceholder.typicode.com/posts
-      <button id="btn-posts" class="btn-action">Buscar posts</button>
+      <button id="btn-posts" class="btn-action">Buscar posts</button><br>
+      
+      <label for="user-id">Digite o <strong>ID</strong> do usuário  que você quer saber os posts: </label>
+      <input id="user-id" type="text">
+      <button id="user-id-btn">Buscar posts</button><br>
+
+      <label for="post-id">Digite o <strong>Número de ID</strong> do post que você gostaria de alterar: </label>
+      <input id="post-id" type="text">
+      <button id="post-id-btn">Buscar posts</button>
+      <div class="modal" data-target="text-area" id="modal-post">   
+        <div class="edit-post"> 
+        <label for="edit-post">Digite o novo post que você deseja incluir: </label>
+        <textarea name="" id="edit-post" rows="4" cols="50"></textarea>
+      </div>
+      </div>
     </div>
   </div>
     <div class="container-style item hidden" id="container-emails">
@@ -130,6 +144,7 @@
     </ul>
     <strong>Dataset:</strong> 500+ comentários
     <button id="btn-emails" class="btn-action">Buscar email</button>
+
   </div>
 </div>
   <div class="container-style item hidden" id="container-country">
@@ -145,7 +160,7 @@
     <button id="btn-country" class="btn-action">Buscar países</button>
   </div>  
 </div>
-  <div class="modal" data-target="list">    
+  <div class="modal" data-target="list" id="modal-list">    
   <ol id="list-result"></ol>
   </div>    
   <div class="container-style item hidden" id="movies-container">
