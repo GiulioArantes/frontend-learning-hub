@@ -33,7 +33,7 @@ jobs:
         run: |
           npx eslint .
           npx stylelint "**/*.css"
-        continue-on-error: true
+        # continue-on-error: true
 
   test:
     name: test
