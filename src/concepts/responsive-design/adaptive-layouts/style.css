@@ -74,7 +74,7 @@ footer {
     grid-template-columns: 8% 1fr;
     grid-template-rows: 1fr 1fr;
     row-gap: 1rem;
-    grid-template-areas:
+    grid-template:
       'sidebar article'
       'sidebar section';
     background-color: aliceblue;

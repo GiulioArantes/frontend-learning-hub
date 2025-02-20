@@ -86,8 +86,8 @@ button {
   justify-content: space-between;
 }
 
-.section-btn:hover .arrow-img {
-  transform: sacle(1.1);
+.section-btn:hover {
+  transform: scale(1.1);
 }
 
 .arrow-img {

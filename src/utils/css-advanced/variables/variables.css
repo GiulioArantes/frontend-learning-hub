@@ -34,7 +34,7 @@
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
 
-  /* Transições e Animações*/
+  /* Transições e Animações */
   --transition-fast: 0.2s ease-in-out;
   --transition-medium: 0.4s ease-in-out;
   --transition-slow: 0.6s ease-in-out;
