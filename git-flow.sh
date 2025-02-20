@@ -18,11 +18,11 @@ declare -A EMOJI_MAP=(
 
 # Allowed branch scopes based on the repository structure.
 # Por exemplo: "concepts", "projects", "utils", "public", "docs"
-VALID_BRANCH_SCOPES=("concepts" "projects" "utils" "public" "docs" "repository" "refactor")
+VALID_BRANCH_SCOPES=("concepts" "projects" "utils" "public" "docs" "repository" "refactor" "workflows")
 
 # Allowed commit scopes.
 # Ex.: "animations", "api-integration", "responsive-design", "gallery", "e-commerce", "portfolio", "js-practice", "css-advanced", "html", "docs"
-VALID_COMMIT_SCOPES=("animations" "api-integration" "responsive-design" "gallery" "e-commerce" "portfolio" "js-practice" "css-advanced" "html" "docs" "map" "reduce" "filter" "license" "readme" "flexbox" "array-methods" "repository" "readme" "localstorage")
+VALID_COMMIT_SCOPES=("animations" "api-integration" "responsive-design" "gallery" "e-commerce" "portfolio" "js-practice" "css-advanced" "html" "docs" "map" "reduce" "filter" "license" "readme" "flexbox" "array-methods" "repository" "readme" "localstorage" "ci-cd")
 
 DEFAULT_PR_BASE="main"        # Base branch for PRs
 AUTO_FORMAT=true              # Execute Prettier before commits

@@ -23,11 +23,12 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.npm
-          key: ubuntu-npm-cache
-          restore-keys: ubuntu-npm-cache
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run Linters
         run: |
@@ -52,11 +53,12 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.npm
-          key: ubuntu-npm-cache
-          restore-keys: ubuntu-npm-cache
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run Tests
         run: npx jest
@@ -79,11 +81,12 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.npm
-          key: ubuntu-npm-cache
-          restore-keys: ubuntu-npm-cache
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
