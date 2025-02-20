@@ -59,12 +59,18 @@ async function parallel() {
 
 parallel();
 
+//set localStorage
 // post API
-const olPosts = document.querySelector('ol');
-const modalList = document.querySelector('#modal-list');
+const olPosts = document.querySelector('ol'),
+  modalList = document.querySelector('#modal-list'),
+  STORAGE_KEY = 'posts';
+let postStore = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
 // API call
 let posts = [];
+function save(posts) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(posts)) || [];
+}
 async function fetchPosts() {
   try {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -72,18 +78,20 @@ async function fetchPosts() {
       throw new Error(`Erro ao buscar dados: ${response.status}`);
     }
     posts = await response.json();
+    save(posts);
   } catch (error) {
     console.error('Falha ao carregar os dados:', error);
   }
 }
 fetchPosts();
+let postStr = JSON.parse(localStorage.getItem('posts')) || [];
 
 // function: posts by user (id)
 const inputUserId = document.querySelector('#user-id');
 function specificPosts() {
   olPosts.innerHTML = '';
-  const filteredPosts = inputUserId.value;
-  const forUser = posts.filter((post) => post.userId === Number(filteredPosts));
+  const filteredPosts = inputUserId.value,
+    forUser = postStr.filter((post) => post.userId === Number(filteredPosts));
   if (forUser.length === 0) {
     alert(`Esse usuário não existe`);
     inputUserId.value = 1;
@@ -100,7 +108,7 @@ function specificPosts() {
 // function: all posts
 function showAllPosts() {
   olPosts.innerHTML = '';
-  posts.forEach((post) => {
+  postStr.forEach((post) => {
     const li = document.createElement('li');
     li.textContent = post.body;
     olPosts.appendChild(li);
@@ -117,13 +125,14 @@ const textarea = document.querySelector('#edit-post');
 
 //function: edit posts
 function editPosts() {
-  const selectedPost = posts.find((post) => post.id === Number(postId.value));
+  const selectedPost = postStr.find((post) => post.id === Number(postId.value));
   if (selectedPost) {
     modalPost.style.display = 'flex';
     textarea.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         selectedPost.body = textarea.value;
         modalPost.style.display = 'none';
+        save(posts);
       }
     });
   }
