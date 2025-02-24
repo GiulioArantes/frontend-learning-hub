@@ -66,11 +66,12 @@ const olPosts = document.querySelector('ol'),
   STORAGE_KEY = 'posts';
 let postStore = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
+function save() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(postStore)) || [];
+}
 // API call
 let posts = [];
-function save(posts) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(posts)) || [];
-}
+
 async function fetchPosts() {
   try {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -78,20 +79,23 @@ async function fetchPosts() {
       throw new Error(`Erro ao buscar dados: ${response.status}`);
     }
     posts = await response.json();
-    save(posts);
+    if (posts.length === postStore.length) {
+      return;
+    } else {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(posts) || []);
+    }
   } catch (error) {
     console.error('Falha ao carregar os dados:', error);
   }
 }
 fetchPosts();
-let postStr = JSON.parse(localStorage.getItem('posts')) || [];
 
 // function: posts by user (id)
 const inputUserId = document.querySelector('#user-id');
 function specificPosts() {
   olPosts.innerHTML = '';
   const filteredPosts = inputUserId.value,
-    forUser = postStr.filter((post) => post.userId === Number(filteredPosts));
+    forUser = postStore.filter((post) => post.userId === Number(filteredPosts));
   if (forUser.length === 0) {
     alert(`Esse usuário não existe`);
     inputUserId.value = 1;
@@ -105,14 +109,27 @@ function specificPosts() {
   }
 }
 
+// total users in the API
+let count = 0;
+let users = 0;
+const totalusers = postStore.forEach((post) => {
+  if (count !== post.userId) {
+    users++;
+    count = post.userId;
+  }
+});
+
 // function: all posts
 function showAllPosts() {
   olPosts.innerHTML = '';
-  postStr.forEach((post) => {
+  postStore.forEach((post) => {
     const li = document.createElement('li');
     li.textContent = post.body;
     olPosts.appendChild(li);
   });
+  const li = document.createElement('li');
+  li.textContent = `Total de usários cadastrados são: ${users}`;
+  olPosts.appendChild(li);
   modalList.style.display = 'flex';
 }
 
@@ -125,19 +142,27 @@ const textarea = document.querySelector('#edit-post');
 
 //function: edit posts
 function editPosts() {
-  const selectedPost = postStr.find((post) => post.id === Number(postId.value));
+  const selectedPost = postStore.find(
+    (post) => post.id === Number(postId.value)
+  );
   if (selectedPost) {
     modalPost.style.display = 'flex';
     textarea.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         selectedPost.body = textarea.value;
         modalPost.style.display = 'none';
-        save(posts);
+        save();
       }
     });
   }
 }
 
+function removePost() {
+  const postIdNumber = Number(postId.value);
+  postStore = postStore.filter((post) => post.id !== postIdNumber);
+  save();
+}
+document.querySelector('#del-btn').addEventListener('click', removePost);
 document.querySelector('#post-id-btn').addEventListener('click', editPosts);
 //comment API
 
