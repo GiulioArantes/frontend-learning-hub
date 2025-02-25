@@ -1,0 +1,31 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+}
+
+.hero {
+  background: linear-gradient(
+    to rigth,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.project-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.project_card:hover {
+  transform: translateY(-5px);
+}
