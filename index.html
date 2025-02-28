@@ -3,39 +3,156 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta
       name="description"
       content="Conheça sobre o meu trabalho! Sou um desenvolvedor front-end e aqui está o meu portfolio, meus projetos e muito mais!"
     />
+    <meta
+      property="og:title"
+      content="Giulio Arantes | Front-end | Giulio Arantes | Front-end"
+    />
+    <meta property="og:description" content="" />
+    <meta
+      property="og:url"
+      content="https://giulioarantes.github.io/frontend-learning-hub/"
+    />
+
     <title>Giulio Arantes | Frontend Hub</title>
     <link rel="stylesheet" href="/public/css/portfolio.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header class="hero">
-      <h1>Frontend Learning Hub</h1>
-      <p>Giulio Arantes | Jornada de Aprendizado Contínuo</p>
+    <header>
+      <nav class="primary-nav">
+        <ul class="nav-list">
+          <li><a href="/" class="home">HOME</a></li>
+          <li><a href="" class="projects">PROJETOS</a></li>
+          <li><a href="" class="concepts">CONCEITOS</a></li>
+          <li><a href="" class="utils">UTILIDADES</a></li>
+          <li><a href="#home-footer" class="contact">CONTATO</a></li>
+        </ul>
+      </nav>
     </header>
-
-    <section class="projects">
-      <h2>Meus experimentos</h2>
-      <div class="project-grid">
-        <a href="/src/projects/basic-website/" class="project-card">
-          <!-- <img src="project-thumb" alt=""> -->
-          <h3>Projeto - Website</h3>
-          <p>Descrição</p>
-        </a>
+    <main id="main-content">
+      <div class="container">
+        <section class="hero" aria-label="hero-title">
+          <picture
+            ><img
+              width="300"
+              height="300"
+              src="public/images/projects/portfolio-pic.jpeg"
+              alt="foto de giulio gabriel"
+              loading="lazy"
+              decoding="async"
+          /></picture>
+          <h1 class="hero-title">
+            Olá, eu sou o Giulio Arantes. Transformo linhas de código em
+            experiências digitais que fazem a diferença.
+          </h1>
+          <div class="hero-paragraph">
+            <p>
+              Minha jornada no desenvolvimento começou com curiosidade e evoluiu
+              com estudos intensivos, transformando
+              <strong>soluções simples</strong> em
+              <strong>experiências interativas</strong> por meio de criatividade
+              e precisão.
+            </p>
+            <p class="hero-last-paragraph">
+              Cada projeto no meu repositório reflete esse
+              <strong>aperfeiçoamento contínuo</strong>, unindo prática e testes
+              para criar interfaces que
+              <strong>melhoram nossa interação com a web</strong>.
+            </p>
+          </div>
+        </section>
       </div>
-    </section>
 
-    <section class="knowledge">
-      <h2>Conceitos Dominados</h2>
-      <div class="concept-grid">
-        <a href="/src/concepts/animations/" class="concept-card">
-          <!-- <img src="project-thumb" alt=""> -->
-          <h3>Animações</h3>
-        </a>
-      </div>
-    </section>
+      <section class="home-section projects" aria-label="projects-title">
+        <div class="container">
+          <header>
+            <h2 id="projects-title" class="section-title">Projetos</h2>
+            <p class="section-subtitle">Explorando Front-end</p>
+          </header>
+          <p class="section-paragraph">
+            Nesta seção, você encontra uma seleção dos meus projetos que
+            ilustram o caminho percorrido no desenvolvimento front-end, fruto de
+            <strong>contínua dedicação</strong>. Utilizando tecnologias como
+            HTML5, CSS3, JavaScript, Rest API, animações e LocalStorage, cada
+            projeto demonstra como transformo desafios em
+            <strong>experiências interativas e inovadoras</strong>.
+          </p>
+          <a class="button" href="">Ver Projetos</a>
+        </div>
+      </section>
+
+      <section class="home-section concepts" aria-label="concepts-title">
+        <div class="container">
+          <header>
+            <h2 id="concepts-title" class="section-title">Conceitos</h2>
+            <p class="section-subtitle">Fundamentos em Ação</p>
+          </header>
+          <p class="section-paragraph">
+            Aqui compartilho os estudos e experimentos que formam a base do meu
+            trabalho. São os conceitos que testei, refatorei e apliquei para
+            transformar teoria em prática, criando bases sólidas para novas
+            soluções. <strong>Experimentar e inovar</strong> está no cerne de
+            cada projeto.
+          </p>
+          <p class="section-paragraph">
+            Meu repositório é o registro dos projetos que aplicam conceitos de
+            forma prática - soluções diretas que resolvem problemas reais e
+            mostram minha abordagem de desenvolvimento.
+          </p>
+          <a id="concepts-button" class="button" href="">Explorar Conceitos</a>
+        </div>
+      </section>
+
+      <section class="home-section utils" aria-label="utils-title">
+        <div class="container">
+          <header>
+            <h2 id="utils-title" class="section-title text-neutral-100">
+              Utilidades
+            </h2>
+            <p class="section-subtitle text-neutral-100">
+              Recursos que Potencializam
+            </p>
+          </header>
+          <p class="section-paragraph text-neutral-100">
+            Nesta área, reúno as utilidades e recursos que uso para otimizar meu
+            fluxo de trabalho. De <strong>scripts práticos</strong> a
+            integrações que simplificam processos, essas ferramentas são
+            resultado de muita experimentação e ajustes reais em projetos.
+          </p>
+          <p class="section-paragraph text-neutral-100">
+            Compartilho essas soluções com o objetivo de ajudar outros
+            desenvolvedores a acelerar seu desenvolvimento, otimizando cada
+            etapa e transformando desafios em oportunidades para criar
+            <strong>produtos digitais mais eficientes</strong>.
+          </p>
+          <a class="button" href="" data-reverse="true">Explorar Utilidades</a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="home-footer" class="primary-footer">
+      <p>Pode entrar em contato comigo também através:</p>
+      <ul class="social-list" role="list">
+        <li>
+          <a href="https://www.instagram.com/arantesgabriel_/">Instagram</a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/giulio-arantes/">LinkedIn</a>
+        </li>
+        <li><a href="https://github.com/GiulioArantes">GitHub</a></li>
+      </ul>
+      <p>© 2025 Frontend Hub</p>
+    </footer>
     <script src="public/js/portfolio.js"></script>
   </body>
 </html>
