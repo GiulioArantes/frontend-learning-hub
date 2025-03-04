@@ -335,6 +335,7 @@ function toggleContainer(containerId) {
       }
     });
     container.classList.toggle('hidden');
+    infoContainer.classList.toggle('hidden');
   }
 }
 
@@ -344,7 +345,6 @@ sidebar.addEventListener('click', (event) => {
   const target = event.target.closest('.section-btn');
   const targetImg = target.querySelector('.arrow-img');
 
-  console.log(targetImg);
   if (targetImg.src.endsWith('/public/images/projects/arrow-left.svg')) {
     targetImg.src = '/public/images/projects/arrow-rigth.svg';
   } else {
@@ -378,7 +378,6 @@ sidebar.addEventListener('click', (event) => {
         return;
     }
     toggleContainer(containerId);
-    infoContainer.classList.toggle('hidden');
   }
 });
 
