@@ -1,0 +1,59 @@
+.title {
+  font-size: clamp(2.827rem, 1rem + 5vw, 5rem);
+}
+
+h1 {
+  font-weight: 900;
+  color: #dd0e42;
+}
+
+.main-paragraph {
+  margin-top: 0.75em;
+  width: 85%;
+}
+
+.project-grid {
+  -webkit-box-align: start;
+  align-items: start;
+  display: grid;
+  gap: 2rem;
+  margin: 5rem calc(30% - 30vw) 6rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 27em) {
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  }
+}
+
+.project-card {
+  border-radius: 0.5em;
+  border: 1.5px solid rgb(221, 14, 66);
+  box-shadow: 4px 4px 0px 0px rgb(221, 14, 66);
+  padding: 2em;
+}
+
+.project-card h2 a {
+  color: #4d4d4d;
+  text-decoration: none;
+}
+
+.project-card h2 a:hover,
+.project-card h2 a:focus {
+  color: #dd0e42;
+}
+
+.label {
+  font-weight: 350;
+  color: #4d4d4d;
+  display: inline-block;
+  font-size: 1rem;
+  margin-right: 0.25em;
+  margin-top: 0;
+  width: max-content;
+}
+
+.project-card p:not([class]) {
+  font-size: 0.925em;
+}
