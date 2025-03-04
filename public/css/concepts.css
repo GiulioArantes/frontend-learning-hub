@@ -1,0 +1,108 @@
+.title {
+  font-size: clamp(2.827rem, 1rem + 5vw, 5rem);
+}
+
+h1 {
+  font-weight: 900;
+  color: #255b98;
+}
+
+.concept-snippet:not(:last-child) {
+  position: relative;
+}
+
+.concept-snippet:first-of-type {
+  margin-top: 5rem;
+}
+
+.concept-snippet-title {
+  font-weight: 750;
+  font-size: 2.827rem;
+}
+
+.text-neutral-800 {
+  color: #4d4d4d !important;
+}
+
+.concept-snippet:not(:last-child)::after {
+  border-bottom: 1px solid #ccc;
+  bottom: 0;
+  content: '';
+  display: block;
+  left: 0;
+  margin: 6rem 0;
+  position: relative;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+p {
+  margin-top: 0.75em;
+}
+
+h2,
+h3 {
+  color: #4d4d4d;
+  margin-top: 1.5em;
+}
+
+.button {
+  background-color: #255b98;
+}
+
+code {
+  background-color: rgba(37, 91, 152, 0.1);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.flow {
+  margin-top: 0.75em;
+}
+
+ol[role='list'] {
+  list-style: none;
+}
+
+.pagination {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  max-width: 25rem;
+  padding: 0;
+  width: 100%;
+}
+
+.current-page {
+  font-weight: 750;
+  background-color: #255b98;
+  border-radius: 100%;
+  color: #fff !important;
+  display: grid;
+  height: 2.7ch;
+  place-items: center;
+  pointer-events: none;
+  text-decoration: none;
+  width: 2.7ch;
+}
+
+.pagination a {
+  color: #4d4d4d;
+}
+
+.sr-only {
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  border: 0 !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+}
