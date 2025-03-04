@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1,
+    "data": "2025-03-01",
+    "valor": 250.0,
+    "categoria": "Eletrônicos",
+    "metodoPagamento": "Cartão de Crédito",
+    "cliente": "João Silva",
+    "quantidade": 1,
+    "desconto": 0,
+    "localizacao": "São Paulo"
+  },
+  {
+    "id": 2,
+    "data": "2025-03-01",
+    "valor": 99.99,
+    "categoria": "Roupas",
+    "metodoPagamento": "Pix",
+    "cliente": "Maria Oliveira",
+    "quantidade": 2,
+    "desconto": 10,
+    "localizacao": "Rio de Janeiro"
+  },
+  {
+    "id": 3,
+    "data": "2025-03-02",
+    "valor": 450.5,
+    "categoria": "Eletrodomésticos",
+    "metodoPagamento": "Boleto",
+    "cliente": "Carlos Souza",
+    "quantidade": 1,
+    "desconto": 5,
+    "localizacao": "Belo Horizonte"
+  },
+  {
+    "id": 4,
+    "data": "2025-03-03",
+    "valor": 120.0,
+    "categoria": "Livros",
+    "metodoPagamento": "Dinheiro",
+    "cliente": "Ana Lima",
+    "quantidade": 3,
+    "desconto": 0,
+    "localizacao": "Curitiba"
+  },
+  {
+    "id": 5,
+    "data": "2025-03-03",
+    "valor": 75.25,
+    "categoria": "Roupas",
+    "metodoPagamento": "Cartão de Crédito",
+    "cliente": "Paulo Mendes",
+    "quantidade": 2,
+    "desconto": 0,
+    "localizacao": "Recife"
+  },
+  {
+    "id": 6,
+    "data": "2025-03-04",
+    "valor": 320.0,
+    "categoria": "Eletrônicos",
+    "metodoPagamento": "Pix",
+    "cliente": "Fernanda Costa",
+    "quantidade": 1,
+    "desconto": 15,
+    "localizacao": "Porto Alegre"
+  },
+  {
+    "id": 7,
+    "data": "2025-03-04",
+    "valor": 89.9,
+    "categoria": "Acessórios",
+    "metodoPagamento": "Cartão de Crédito",
+    "cliente": "Luiz Ferreira",
+    "quantidade": 4,
+    "desconto": 5,
+    "localizacao": "Salvador"
+  },
+  {
+    "id": 8,
+    "data": "2025-03-05",
+    "valor": 150.0,
+    "categoria": "Livros",
+    "metodoPagamento": "Boleto",
+    "cliente": "Mariana Rocha",
+    "quantidade": 2,
+    "desconto": 0,
+    "localizacao": "Fortaleza"
+  },
+  {
+    "id": 9,
+    "data": "2025-03-05",
+    "valor": 230.75,
+    "categoria": "Eletrodomésticos",
+    "metodoPagamento": "Pix",
+    "cliente": "Ricardo Alves",
+    "quantidade": 1,
+    "desconto": 10,
+    "localizacao": "Curitiba"
+  },
+  {
+    "id": 10,
+    "data": "2025-03-06",
+    "valor": 199.99,
+    "categoria": "Eletrônicos",
+    "metodoPagamento": "Dinheiro",
+    "cliente": "Carla Nunes",
+    "quantidade": 1,
+    "desconto": 0,
+    "localizacao": "São Paulo"
+  },
+  {
+    "id": 11,
+    "data": "2025-03-07",
+    "valor": 300.0,
+    "categoria": "Móveis",
+    "metodoPagamento": "Cartão de Crédito",
+    "cliente": "Roberto Santos",
+    "quantidade": 1,
+    "desconto": 20,
+    "localizacao": "Belo Horizonte"
+  },
+  {
+    "id": 12,
+    "data": "2025-03-07",
+    "valor": 80.5,
+    "categoria": "Alimentos",
+    "metodoPagamento": "Dinheiro",
+    "cliente": "Sofia Martins",
+    "quantidade": 5,
+    "desconto": 0,
+    "localizacao": "Rio de Janeiro"
+  },
+  {
+    "id": 13,
+    "data": "2025-03-08",
+    "valor": 65.0,
+    "categoria": "Bebidas",
+    "metodoPagamento": "Pix",
+    "cliente": "Gabriel Costa",
+    "quantidade": 6,
+    "desconto": 0,
+    "localizacao": "São Paulo"
+  },
+  {
+    "id": 14,
+    "data": "2025-03-08",
+    "valor": 500.0,
+    "categoria": "Eletrônicos",
+    "metodoPagamento": "Boleto",
+    "cliente": "Laura Castro",
+    "quantidade": 2,
+    "desconto": 10,
+    "localizacao": "Recife"
+  },
+  {
+    "id": 15,
+    "data": "2025-03-09",
+    "valor": 110.25,
+    "categoria": "Roupas",
+    "metodoPagamento": "Cartão de Crédito",
+    "cliente": "Eduardo Silva",
+    "quantidade": 3,
+    "desconto": 5,
+    "localizacao": "Porto Alegre"
+  }
+]
