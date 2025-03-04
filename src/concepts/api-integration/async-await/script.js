@@ -335,7 +335,6 @@ function toggleContainer(containerId) {
       }
     });
     container.classList.toggle('hidden');
-    infoContainer.classList.toggle('hidden');
   }
 }
 

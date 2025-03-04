@@ -18,8 +18,8 @@ h2 {
 body {
   display: grid;
   grid-template-rows: min-content auto min-content;
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
   padding: 0;
   margin: 0;
 }
@@ -28,6 +28,15 @@ body {
   color: #003049;
   line-height: 1.6;
   margin-top: 0;
+}
+
+.info-container {
+  text-align: center;
+  height: fit-content;
+}
+
+ul {
+  list-style: none;
 }
 
 .info-container p {
@@ -51,12 +60,15 @@ li {
 
 main {
   display: flex;
+  flex-wrap: wrap;
   overflow: hidden;
   gap: 1rem;
 }
 
 .container-style {
   display: flex;
+  border-top: #ccc solid 1px;
+  margin-bottom: 7rem;
   width: 100%;
   justify-content: center;
   text-align: center;
