@@ -118,17 +118,6 @@ git commit -m "feat: add NASA API integration
 - Create modal display system"
 ```
 
-## 🧭 Learning Roadmap
-
-```mermaid
-graph LR
-    Current((Current Skills)) --> React[React Framework]
-    Current --> TS[TypeScript]
-    Current --> Tests[Testing Library]
-    React --> Next[Next.js]
-    Tests --> Cypress[Cypress E2E]
-```
-
 ## 🔄 CI/CD Pipeline Implemented by [@Antoineio](https://github.com/Antoineio)
 
 [![Test Coverage](https://img.shields.io/badge/coverage-100%25-success)](https://github.com/GiulioArantes/meu-projeto-didatico/actions)
